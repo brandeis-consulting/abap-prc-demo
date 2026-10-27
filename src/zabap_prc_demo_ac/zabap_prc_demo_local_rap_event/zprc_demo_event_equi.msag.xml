@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZPRC_DEMO_EVENT_EQUI</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>Event Handling for equipments</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_EVENT_EQUI</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Equipment &amp;1 assigned to service contract &amp;2, item &amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_EVENT_EQUI</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Equipment &amp;1 could not be assigned to a service contract</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_EVENT_EQUI</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>No free item in an open or in-process service contract</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_EVENT_EQUI</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Service contract &amp;1 is locked - the assignment will be retried</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_EVENT_EQUI</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Equipment &amp;1:</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

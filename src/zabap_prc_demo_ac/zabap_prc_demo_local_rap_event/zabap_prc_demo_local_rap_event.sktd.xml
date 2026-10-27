@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SKTD" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <SKTD>
+    <METADATA>
+     <DESCRIPTION>Documentation for ZABAP_PRC_DEMO_LOCAL_RAP_EVENT</DESCRIPTION>
+     <LANGUAGE>EN</LANGUAGE>
+     <ABAP_LANGU_VERSION>5</ABAP_LANGU_VERSION>
+    </METADATA>
+    <REF_OBJECT>
+     <TYPE>DEVC/K</TYPE>
+     <NAME>ZABAP_PRC_DEMO_LOCAL_RAP_EVENT</NAME>
+    </REF_OBJECT>
+    <ELEMENTS>
+     <item>
+      <ID>ZABAP_PRC_DEMO_LOCAL_RAP_EVENT</ID>
+      <REF>
+       <URI>/sap/bc/adt/packages/zabap_prc_demo_local_rap_event</URI>
+       <TYPE>DEVC/K</TYPE>
+       <NAME>ZABAP_PRC_DEMO_LOCAL_RAP_EVENT</NAME>
+       <DESCRIPTION>ABAP-PRC Demo scenario: Local RAP event (assign equipment)</DESCRIPTION>
+      </REF>
+      <TEXT>IyBTY2VuYXJpbzogTG9jYWwgUkFQIGV2ZW50IChhc3NpZ24gZXF1aXBtZW50KQoKV2hlbiBhbiBl
+cXVpcG1lbnQgaXMgY3JlYXRlZCwgaXQgaXMgYXNzaWduZWQgdG8gdGhlIG5leHQgZnJlZSBpdGVt
+IG9mIGEgc2VydmljZSBjb250cmFjdC4gVGhlIGFzc2lnbm1lbnQKcnVucyBpbiBhbiBldmVudCBo
+YW5kbGVyIC0gYW5kIGZhaWxzIGlmIHRoZSBjb250cmFjdCBpcyBsb2NrZWQgYXQgdGhhdCBtb21l
+bnQuIFdpdGhvdXQgdGhlIFByb2Nlc3NpbmcgQ2VudGVyCnRoZSBlcnJvciBlbmRzIHVwIGluIGFu
+IGFwcGxpY2F0aW9uIGxvZyBub2JvZHkgcmVhZHM7IGhlcmUgaXQgaXMgYW4gb2JqZWN0IHdpdGgg
+YSBmYWlsZWQgc3RlcCB0aGF0IHRoZSByZXRyeQpqb2IgYXNzaWducyBsYXRlci4KCiMjIFdoYXQg
+aXQgc2hvd3MKCi0gQSBSQVAgYnVzaW5lc3MgZXZlbnQgKGBlcXVpcG1lbnRfY3JlYXRlZGApIGNv
+bnN1bWVkIGJ5IGEgbG9jYWwgZXZlbnQgaGFuZGxlciAoYFpDTF9QUkNfREVNT19FUVVJX0VWVF9I
+RExgKQogIHRoYXQgb25seSBjcmVhdGVzIGEgcHJvY2Vzc2VkIG9iamVjdCAtIHRoZSB3b3JrIHJ1
+bnMgZGVjb3VwbGVkIHZpYSBiZ1BGLgotIFRoZSBwcm9jZXNzIGBERU1PX0VRVUlfQVNTSUdOX0NP
+TlRSQUNUYCAoYFpDTF9QUkNfREVNT19FUVVJX0FTU0lHTl9QUk9DYCk6IHRoZSBhc3NpZ25tZW50
+IGdvZXMgdGhyb3VnaCB0aGUKICBzZXJ2aWNlIGNvbnRyYWN0IEJPIGJ5IEVNTCwgc28gaXRzIGxv
+Y2sgYXBwbGllcy4KLSBTZWxmLWhlYWxpbmc6IGEgbG9jayBlcnJvciBpcyBhIGZhaWxlZCBzdGVw
+OyB0aGUgcmV0cnkgam9iIHByb2Nlc3NlcyBpdCBhZ2FpbiBsYXRlci4KCiMjIFRoZSBydWxlCgpU
+aGUgZXF1aXBtZW50IGdvZXMgdG8gdGhlIGZpcnN0IGl0ZW0gd2l0aG91dCBlcXVpcG1lbnQgb2Yg
+YSBjb250cmFjdCB0aGF0IGlzICoqT3BlbiAoQSkqKiBvcgoqKkluIFByb2Nlc3MgKEIpKiosIG9y
+ZGVyZWQgYnkgY29udHJhY3QgYW5kIGl0ZW0gbnVtYmVyLiBDb21wbGV0ZWQgYW5kIHJlbGVhc2Vk
+IGNvbnRyYWN0cyBhcmUgbm90IGNoYW5nZWQuCk5vIGZyZWUgaXRlbSDihpIgYnVzaW5lc3MgZXJy
+b3IgKG1lc3NhZ2UgMDAzKTogY3JlYXRlIGFuIGl0ZW0gb3IgcmVzZXQgdGhlIGRlbW8gZGF0YSwg
+dGhlbiByZXN1bWUuCgojIyBUcnkgaXQKClByZXJlcXVpc2l0ZTogZGVtbyBkYXRhIGZyb20gYFpD
+TF9QUkNfREVNT19DT01NT05fSU5JVGAgKGl0ZW0gOSBvZiBldmVyeSBjb250cmFjdCBpcyBmcmVl
+KS4KCjEuIFNldCBhIGJyZWFrcG9pbnQgaW4gdGhlIGV2ZW50IGhhbmRsZXIgYFpDTF9QUkNfREVN
+T19FUVVJX0VWVF9IRExgIChvcHRpb25hbCkuCjIuIENyZWF0ZSBhbiBlcXVpcG1lbnQgaW4gdGhl
+IGVxdWlwbWVudCBhcHAuCjMuIFNlcnZpY2UgY29udHJhY3QgYXBwOiB0aGUgZmlyc3Qgb3BlbiBv
+ciBpbi1wcm9jZXNzIGNvbnRyYWN0IG5vdyBoYXMgdGhlIGVxdWlwbWVudCBpbiBpdGVtIDkwMC4K
+NC4gUHJvY2Vzc2VkIE9iamVjdHMgYXBwOiB0aGUgb2JqZWN0IG9mIHRoZSBlcXVpcG1lbnQgd2l0
+aCBoZWFkZXIgIkVxdWlwbWVudCAuLi4gYXNzaWduZWQgdG8gc2VydmljZSBjb250cmFjdCAuLi4i
+LgoKIyMgUHJvdm9rZSB0aGUgbG9jawoKVGhlIHNlcnZpY2UgY29udHJhY3QgQk8gaGFzIG5vIGRy
+YWZ0OiBhIGNvbnRyYWN0IGlzIG9ubHkgbG9ja2VkIHdoaWxlIGFub3RoZXIgdHJhbnNhY3Rpb24g
+Y2hhbmdlcyBpdC4KSG9sZCB0aGUgbG9jayBpbiB0aGUgZGVidWdnZXIgLSBlLmcuIGNoYW5nZSB0
+aGUgZmlyc3QgZnJlZSBjb250cmFjdCBpbiB0aGUgc2VydmljZSBjb250cmFjdCBhcHAgYW5kIHN0
+b3AKaW4gaXRzIHNhdmUgLSBhbmQgY3JlYXRlIGFuIGVxdWlwbWVudCBtZWFud2hpbGUuIFRoZSBz
+dGVwIGZhaWxzIChtZXNzYWdlIDAwNCksIHRoZSByZXRyeSBqb2IgYXNzaWducyB0aGUKZXF1aXBt
+ZW50IGxhdGVyLgoKIyMgUmVzZXQKClJ1biBgWkNMX1BSQ19ERU1PX0NPTU1PTl9JTklUYCBhZ2Fp
+bi4K</TEXT>
+      <CAN_HAVE_DOCUMENTATION>X</CAN_HAVE_DOCUMENTATION>
+      <LINKS>
+       <item>
+        <HREF>/sap/bc/adt/repository/informationsystem/elementinfo?path=zabap_prc_demo_local_rap_event&amp;type=devc/k</HREF>
+        <REL>http://www.sap.com/adt/relations/elementinfo</REL>
+        <TYPE>application/vnd.sap.adt.elementinfo+xml</TYPE>
+        <TITLE>Show Element Information</TITLE>
+       </item>
+      </LINKS>
+      <SHORTTEXT_OBLIGATION>forbidden</SHORTTEXT_OBLIGATION>
+      <LONGTEXT_OBLIGATION>optional</LONGTEXT_OBLIGATION>
+     </item>
+    </ELEMENTS>
+   </SKTD>
+  </asx:values>
+ </asx:abap>
+</abapGit>

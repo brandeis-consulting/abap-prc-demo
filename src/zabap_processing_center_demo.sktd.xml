@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SKTD" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <SKTD>
+    <METADATA>
+     <DESCRIPTION>Documentation for ZABAP_PROCESSING_CENTER_DEMO</DESCRIPTION>
+     <LANGUAGE>EN</LANGUAGE>
+     <ABAP_LANGU_VERSION>5</ABAP_LANGU_VERSION>
+    </METADATA>
+    <REF_OBJECT>
+     <TYPE>DEVC/K</TYPE>
+     <NAME>ZABAP_PROCESSING_CENTER_DEMO</NAME>
+    </REF_OBJECT>
+    <ELEMENTS>
+     <item>
+      <ID>ZABAP_PROCESSING_CENTER_DEMO</ID>
+      <REF>
+       <URI>/sap/bc/adt/packages/zabap_processing_center_demo</URI>
+       <TYPE>DEVC/K</TYPE>
+       <NAME>ZABAP_PROCESSING_CENTER_DEMO</NAME>
+       <DESCRIPTION>ABAP-PRC: Demos</DESCRIPTION>
+      </REF>
+      <TEXT>IyBBQkFQLVBSQyBEZW1vcwoKVGhlIGRlbW9zIHNob3cgdGhyZWUgdHlwaWNhbCB3YXlzIGludG8g
+dGhlIEFCQVAgUHJvY2Vzc2luZyBDZW50ZXIuIEV2ZXJ5IHNjZW5hcmlvIHBhY2thZ2UgY2Fycmll
+cyBpdHMgb3duCmRlc2NyaXB0aW9uOiB3aGF0IGl0IHNob3dzLCBob3cgdG8gdHJ5IGl0IGFuZCB3
+aGF0IHRvIG9ic2VydmUuCgp8IFNjZW5hcmlvIHwgUGFja2FnZSB8IEVudHJ5IHBvaW50IHwKfC0t
+LXwtLS18LS0tfAp8IE1hc3MgcHJvY2Vzc2luZyB8IGBaQUJBUF9QUkNfREVNT19NQVNTYCB8IEFw
+cGxpY2F0aW9uIGpvYiBvciBhY3Rpb24gaW4gYSBGaW9yaSBhcHAsIG1vbml0b3JlZCBpbiB0aGUg
+UnVucyBhcHAgfAp8IFJGQyBpbmJvdW5kIHwgYFpBQkFQX1BSQ19ERU1PX1JGQ19JTkJPVU5EYCB8
+IEluY29taW5nIGNhbGxzIGNyZWF0ZSBwcm9jZXNzZWQgb2JqZWN0cyB0aGF0IHJ1biB0aHJvdWdo
+IHNldmVyYWwgc3RlcHMgfAp8IExvY2FsIFJBUCBldmVudCB8IGBaQUJBUF9QUkNfREVNT19MT0NB
+TF9SQVBfRVZFTlRgIHwgQSBSQVAgYnVzaW5lc3MgZXZlbnQgdHJpZ2dlcnMgdGhlIHByb2Nlc3Np
+bmcgKGJnUEYpLCByZXRyeSBvbiBsb2NrcyB8CgpUaGUgc2NlbmFyaW9zIHNoYXJlIHRoZSBtYXN0
+ZXIgZGF0YSBhcHBzIGluIGBaQUJBUF9QUkNfREVNT19DT01NT05gLgoKIyMgU3RhcnQgaGVyZQoK
+MS4gUnVuIHRoZSBjbGFzc3J1biBgWkNMX1BSQ19ERU1PX0NPTU1PTl9JTklUYCAoRjkgaW4gQURU
+KS4gSXQgZGVsZXRlcyBhbmQgcmVjcmVhdGVzIGFsbCBkZW1vIG1hc3RlciBkYXRhLgoyLiBQaWNr
+IGEgc2NlbmFyaW8gYW5kIGZvbGxvdyBpdHMgZGVzY3JpcHRpb24uCgojIyBTdHJ1Y3R1cmUKCi0g
+YFpBQkFQX1BSQ19ERU1PX0FDYCAtIGV2ZXJ5dGhpbmcgdGhhdCBydW5zIGluIEFCQVAgQ2xvdWQK
+LSBgWkFCQVBfUFJDX0RFTU9fTkFDYCAtIHRoZSBkZXBsb3llZCBGaW9yaSBhcHBzIChvbi1wcmVt
+aXNlIG9ubHkpCg==</TEXT>
+      <CAN_HAVE_DOCUMENTATION>X</CAN_HAVE_DOCUMENTATION>
+      <LINKS>
+       <item>
+        <HREF>/sap/bc/adt/repository/informationsystem/elementinfo?path=zabap_processing_center_demo&amp;type=devc/k</HREF>
+        <REL>http://www.sap.com/adt/relations/elementinfo</REL>
+        <TYPE>application/vnd.sap.adt.elementinfo+xml</TYPE>
+        <TITLE>Show Element Information</TITLE>
+       </item>
+      </LINKS>
+      <SHORTTEXT_OBLIGATION>forbidden</SHORTTEXT_OBLIGATION>
+      <LONGTEXT_OBLIGATION>optional</LONGTEXT_OBLIGATION>
+     </item>
+    </ELEMENTS>
+   </SKTD>
+  </asx:values>
+ </asx:abap>
+</abapGit>

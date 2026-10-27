@@ -1,0 +1,33 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Demo: Business Partner",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "ZABAP_PROCESSING_CENTER"
+  },
+  "ui5AppDetails": {
+    "appId": "abap.demo.processingcenter.demobupa",
+    "icfPath": "/sap/bc/ui5_ui5/sap/zprcdemobupa"
+  },
+  "navigation": {
+    "targetMappingId": "5AF3C81B9D2E1FE1B49966114645C069_TM",
+    "semanticObject": "ABAP_PRC_Demo_BusinessPartner",
+    "action": "show",
+    "desktop": true,
+    "tablet": true
+  },
+  "tiles": [
+    {
+      "id": "5AF3C81B9D2E1FE1B49960BBDABA8069",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Demo: Business Partner",
+        "subtitle": "Show and Manage"
+      }
+    }
+  ]
+}

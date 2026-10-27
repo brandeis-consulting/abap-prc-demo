@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SKTD" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <SKTD>
+    <METADATA>
+     <DESCRIPTION>Documentation for ZABAP_PRC_DEMO_COMMON</DESCRIPTION>
+     <LANGUAGE>EN</LANGUAGE>
+     <ABAP_LANGU_VERSION>5</ABAP_LANGU_VERSION>
+    </METADATA>
+    <REF_OBJECT>
+     <TYPE>DEVC/K</TYPE>
+     <NAME>ZABAP_PRC_DEMO_COMMON</NAME>
+    </REF_OBJECT>
+    <ELEMENTS>
+     <item>
+      <ID>ZABAP_PRC_DEMO_COMMON</ID>
+      <REF>
+       <URI>/sap/bc/adt/packages/zabap_prc_demo_common</URI>
+       <TYPE>DEVC/K</TYPE>
+       <NAME>ZABAP_PRC_DEMO_COMMON</NAME>
+       <DESCRIPTION>ABAP-PRC Demo: Master data apps used by all scenarios</DESCRIPTION>
+      </REF>
+      <TEXT>IyBDb21tb24gbWFzdGVyIGRhdGEKClNtYWxsIFJBUCBhcHBzIHdpdGggdGhlIG1hc3RlciBkYXRh
+IHRoZSBzY2VuYXJpb3Mgd29yayBvbi4gVGhleSBhcmUgbm90IHBhcnQgb2YgdGhlIFByb2Nlc3Np
+bmcgQ2VudGVyIC0KdGhleSBvbmx5IGdpdmUgdGhlIHNjZW5hcmlvcyBzb21ldGhpbmcgcmVhbGlz
+dGljIHRvIHByb2Nlc3MuCgp8IFBhY2thZ2UgfCBBcHAgfCBVc2VkIGJ5IHwKfC0tLXwtLS18LS0t
+fAp8IGBaQUJBUF9QUkNfREVNT19CVVBBYCB8IEJ1c2luZXNzIHBhcnRuZXJzIHwgU2VydmljZSBj
+b250cmFjdHMgKHNvbGQtdG8sIHNoaXAtdG8pIHwKfCBgWkFCQVBfUFJDX0RFTU9fTUFURVJJQUxg
+IHwgTWF0ZXJpYWxzIHwgU2VydmljZSBjb250cmFjdCBpdGVtcyB8CnwgYFpBQkFQX1BSQ19ERU1P
+X0VRVUlfQ0FURUdPUllgIHwgRXF1aXBtZW50IGNhdGVnb3JpZXMgfCBFcXVpcG1lbnRzIHwKfCBg
+WkFCQVBfUFJDX0RFTU9fRVFVSVBNRU5UYCB8IEVxdWlwbWVudHMsIHJhaXNlIHRoZSBldmVudCBg
+ZXF1aXBtZW50X2NyZWF0ZWRgIHwgTG9jYWwgUkFQIGV2ZW50IHwKfCBgWkFCQVBfUFJDX0RFTU9f
+U1JWX0NPTlRSQUNUYCB8IFNlcnZpY2UgY29udHJhY3RzIHdpdGggaXRlbXM7IGFjdGlvbiB0byBz
+dGFydCB0aGUgYWRqdXN0bWVudCBydW4gfCBNYXNzIHByb2Nlc3NpbmcsIExvY2FsIFJBUCBldmVu
+dCB8CgojIyBEZW1vIGRhdGEKClRoZSBjbGFzc3J1biBgWkNMX1BSQ19ERU1PX0NPTU1PTl9JTklU
+YCBkZWxldGVzIGFuZCByZWNyZWF0ZXMgYWxsIG1hc3RlciBkYXRhOgoKLSAxNSBidXNpbmVzcyBw
+YXJ0bmVycywgNSBtYXRlcmlhbHMsIDMgZXF1aXBtZW50IGNhdGVnb3JpZXMKLSAxMCwwMDAgZXF1
+aXBtZW50cyAoYDAwMDAwMDAwMDFgIC4uLikKLSAyMCBzZXJ2aWNlIGNvbnRyYWN0cyB3aXRoIDkg
+aXRlbXMgZWFjaC4gSXRlbXMgMS04IGNhcnJ5IHRoZSBlcXVpcG1lbnRzIDEtMTYwLgogICoqSXRl
+bSA5IG9mIGV2ZXJ5IGNvbnRyYWN0IHN0YXlzIGZyZWUqKiAtIHRoZSBzY2VuYXJpbyBMb2NhbCBS
+QVAgZXZlbnQgYXNzaWducyBuZXcgZXF1aXBtZW50cyB0aGVyZS4KLSBMaWZlY3ljbGUgc3RhdHVz
+IHJvdGF0ZXMgb3ZlciB0aGUgY29udHJhY3RzOiBPcGVuIChBKSwgSW4gUHJvY2VzcyAoQiksIENv
+bXBsZXRlZCAoQyksIFJlbGVhc2VkIChEKS4KClJ1biBpdCBhZ2FpbiB3aGVuZXZlciB5b3Ugd2Fu
+dCB0byBzdGFydCBmcm9tIHNjcmF0Y2guCg==</TEXT>
+      <CAN_HAVE_DOCUMENTATION>X</CAN_HAVE_DOCUMENTATION>
+      <LINKS>
+       <item>
+        <HREF>/sap/bc/adt/repository/informationsystem/elementinfo?path=zabap_prc_demo_common&amp;type=devc/k</HREF>
+        <REL>http://www.sap.com/adt/relations/elementinfo</REL>
+        <TYPE>application/vnd.sap.adt.elementinfo+xml</TYPE>
+        <TITLE>Show Element Information</TITLE>
+       </item>
+      </LINKS>
+      <SHORTTEXT_OBLIGATION>forbidden</SHORTTEXT_OBLIGATION>
+      <LONGTEXT_OBLIGATION>optional</LONGTEXT_OBLIGATION>
+     </item>
+    </ELEMENTS>
+   </SKTD>
+  </asx:values>
+ </asx:abap>
+</abapGit>

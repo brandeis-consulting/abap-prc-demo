@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SKTD" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <SKTD>
+    <METADATA>
+     <DESCRIPTION>Documentation for ZABAP_PRC_DEMO_RFC_INBOUND</DESCRIPTION>
+     <LANGUAGE>EN</LANGUAGE>
+     <ABAP_LANGU_VERSION>5</ABAP_LANGU_VERSION>
+    </METADATA>
+    <REF_OBJECT>
+     <TYPE>DEVC/K</TYPE>
+     <NAME>ZABAP_PRC_DEMO_RFC_INBOUND</NAME>
+    </REF_OBJECT>
+    <ELEMENTS>
+     <item>
+      <ID>ZABAP_PRC_DEMO_RFC_INBOUND</ID>
+      <REF>
+       <URI>/sap/bc/adt/packages/zabap_prc_demo_rfc_inbound</URI>
+       <TYPE>DEVC/K</TYPE>
+       <NAME>ZABAP_PRC_DEMO_RFC_INBOUND</NAME>
+       <DESCRIPTION>ABAP-PRC Demo scenario: RFC inbound (create equipment)</DESCRIPTION>
+      </REF>
+      <TEXT>IyBTY2VuYXJpbzogUkZDIGluYm91bmQgKGNyZWF0ZSBlcXVpcG1lbnQpCgpJbmNvbWluZyBjYWxs
+cyBkZWxpdmVyIGVxdWlwbWVudHMgdG8gYmUgY3JlYXRlZC4gRWFjaCBjYWxsIGJlY29tZXMgYSBw
+cm9jZXNzZWQgb2JqZWN0IHRoYXQgcnVucyB0aHJvdWdoCnNldmVyYWwgc3RlcHMgLSB2YWxpZGF0
+ZSwgY3JlYXRlLCBsaW5rIHRoZSBzZXJpYWwgbnVtYmVyLCBjaGVjayBhbmQsIGlmIG5lZWRlZCwg
+aW5zdGFsbCB0aGUgZXF1aXBtZW50LgoKIyMgV2hhdCBpdCBzaG93cwoKLSBBIG11bHRpLXN0ZXAg
+cHJvY2VzcyB3aXRoIGJyYW5jaGVzIChgWkNMX1BSQ19ERU1PX0NSRUFURV9FUVVJX1BST0NgKTog
+ZXZlcnkgc3RlcCBpcyBpdHMgb3duIHVuaXQgb2Ygd29yaywKICBhIGZhaWxlZCBzdGVwIGlzIGNv
+bnRpbnVlZCBsYXRlciBhdCBleGFjdGx5IHRoYXQgc3RlcCAtIG5vdGhpbmcgdGhhdCBhbHJlYWR5
+IHN1Y2NlZWRlZCBydW5zIGFnYWluLgotIEVycm9ycyBpbiBjb250ZXh0OiBlYWNoIHN0ZXAgY2Fy
+cmllcyBpdHMgaGVhZGVyIG1lc3NhZ2UgYW5kIHRoZSBkZXRhaWxzLgotIFJldHJ5IGFuZCByZXN1
+bWUgaW4gdGhlIFByb2Nlc3NlZCBPYmplY3RzIGFwcC4KClRoZSBjcmVhdGlvbiBpdHNlbGYgaXMg
+KipzaW11bGF0ZWQqKjogdGhlIGVxdWlwbWVudHMgYEVRVUkwMDFgIC4uLiBgRVFVSTAyMGAgZG8g
+bm90IGV4aXN0IGFueXdoZXJlLiBFYWNoIHN0ZXAKd2FpdHMgb25lIHNlY29uZCBhbmQgZmFpbHMg
+aW4gcm91Z2hseSBvbmUgb3V0IG9mIHRlbiBjYXNlcyAod2hlbiB0aGUgY3VycmVudCBzZWNvbmQg
+ZW5kcyB3aXRoIDEpLCBzbyB0aGF0CmVycm9ycyBhcHBlYXIgb24gZXZlcnkgcnVuLgoKIyMgT2Jq
+ZWN0cwoKLSBgWkNMX1BSQ19ERU1PX0NSRUFURV9FUVVJX1BST0NgIC0gcHJvY2VzcyB3aXRoIGl0
+cyBzdGVwcwotIGBaQ0xfUFJDX0RFTU9fQ1JFQVRFX0VRVUlfSU5JVGAgLSBjbGFzc3J1biB0aGF0
+IHNpbXVsYXRlcyAyMCBpbmNvbWluZyBjYWxscwotIE1lc3NhZ2UgY2xhc3MgYFpQUkNfREVNT19B
+UElfRVFVSWAKCiMjIFRyeSBpdAoKMS4gUnVuIHRoZSBjbGFzc3J1biBgWkNMX1BSQ19ERU1PX0NS
+RUFURV9FUVVJX0lOSVRgIChGOSkuIEl0IGRlbGV0ZXMgdGhlIG9iamVjdHMgb2YgZWFybGllciBy
+dW5zLCBjcmVhdGVzCiAgIDIwIHByb2Nlc3NlZCBvYmplY3RzIGFuZCBwcm9jZXNzZXMgdGhlbSBk
+aXJlY3RseS4KMi4gT3BlbiB0aGUgUHJvY2Vzc2VkIE9iamVjdHMgYXBwLCBmaWx0ZXIgYnkgcHJv
+Y2VzcyBhbmQgd2F0Y2ggdGhlIHN0YXRlcyBjaGFuZ2UuCjMuIE9wZW4gYW4gb2JqZWN0IHdpdGgg
+YW4gZXJyb3I6IHRoZSBmYWlsZWQgc3RlcCwgaXRzIG1lc3NhZ2UsIHRoZSBzdGVwcyBiZWZvcmUg
+aXQuCjQuIFJlc3VtZSB0aGUgb2JqZWN0IChvciBsZXQgdGhlIHJldHJ5IGpvYiBwaWNrIGl0IHVw
+KTogcHJvY2Vzc2luZyBjb250aW51ZXMgYXQgdGhlIGZhaWxlZCBzdGVwLgoKIyMgV2hhdCB0byBv
+YnNlcnZlCgotIERpZmZlcmVudCBlbmQgc3RhdGVzIHBlciBvYmplY3QgLSB0aGUgYnJhbmNoICJp
+bnN0YWxsYXRpb24gcmVxdWlyZWQiIG9yIG5vdC4KLSBBIGZhaWxlZCBzdGVwIGRvZXMgbm90IHJl
+cGVhdCB0aGUgc3RlcHMgYmVmb3JlIGl0LgoKIyMgTmV4dCB2ZXJzaW9uCgpJbiBhIHJlYWwgaW5i
+b3VuZCBpbnRlcmZhY2UgdGhlIGNhbGxzIGFyZSBmaXJzdCBwZXJzaXN0ZWQgaW4gYSBzdGFnaW5n
+IGFwcCBhbmQgcHJvY2Vzc2VkIGZyb20gdGhlcmUuClRoZSBzdGFnaW5nIGFwcCBmb2xsb3dzIGlu
+IHRoZSBuZXh0IHZlcnNpb24gKFdlYiBBUEkgLyBSRkMgaW5ib3VuZCkuCgojIyBSZXNldAoKUnVu
+IGBaQ0xfUFJDX0RFTU9fQ1JFQVRFX0VRVUlfSU5JVGAgYWdhaW4uCg==</TEXT>
+      <CAN_HAVE_DOCUMENTATION>X</CAN_HAVE_DOCUMENTATION>
+      <LINKS>
+       <item>
+        <HREF>/sap/bc/adt/repository/informationsystem/elementinfo?path=zabap_prc_demo_rfc_inbound&amp;type=devc/k</HREF>
+        <REL>http://www.sap.com/adt/relations/elementinfo</REL>
+        <TYPE>application/vnd.sap.adt.elementinfo+xml</TYPE>
+        <TITLE>Show Element Information</TITLE>
+       </item>
+      </LINKS>
+      <SHORTTEXT_OBLIGATION>forbidden</SHORTTEXT_OBLIGATION>
+      <LONGTEXT_OBLIGATION>optional</LONGTEXT_OBLIGATION>
+     </item>
+    </ELEMENTS>
+   </SKTD>
+  </asx:values>
+ </asx:abap>
+</abapGit>
