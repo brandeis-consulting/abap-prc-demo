@@ -1,4 +1,4 @@
-@Metadata.layer: #CUSTOMER
+@Metadata.layer: #PARTNER
 @UI.headerInfo: { typeName: 'Service Contract Item',
                   typeNamePlural: 'Service Contract Items',
                   title: { type: #STANDARD, value: 'ItemNumber' },
@@ -60,7 +60,8 @@ annotate view ZC_PRC_DEMO_ServiceContractItm with
   @UI.selectionField: [ { position: 70 } ]
   DiscountPercent;
 
-  // Assigned by the local RAP event demo (equipment created -> next free item)
+  // Assigned by the local RAP event demo (equipment created -> next free item).
+  // Identifier is the semantic key of the equipment app: the object page opens directly
   @EndUserText.label: 'Equipment'
   @UI.lineItem: [ { position: 80, type: #WITH_INTENT_BASED_NAVIGATION, semanticObject: 'ABAP_PRC_Demo_Equipment', semanticObjectAction: 'show', semanticObjectBinding: [{element: 'Identifier', localElement: 'EquipmentId'}] } ]
   @UI.identification: [ { position: 80, type: #WITH_INTENT_BASED_NAVIGATION, semanticObject: 'ABAP_PRC_Demo_Equipment', semanticObjectAction: 'show', semanticObjectBinding: [{element: 'Identifier', localElement: 'EquipmentId'}] } ]

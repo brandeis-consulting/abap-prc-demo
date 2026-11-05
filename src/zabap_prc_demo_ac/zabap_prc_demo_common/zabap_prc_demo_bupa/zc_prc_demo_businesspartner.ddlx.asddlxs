@@ -1,4 +1,4 @@
-@Metadata.layer: #CUSTOMER
+@Metadata.layer: #PARTNER
 @Search.searchable: true
 @UI.headerInfo: {
     typeName: 'Business Partner',

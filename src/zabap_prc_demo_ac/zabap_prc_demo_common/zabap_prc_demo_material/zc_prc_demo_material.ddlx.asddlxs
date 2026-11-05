@@ -1,8 +1,8 @@
-@Metadata.layer: #CUSTOMER
-
+@Metadata.layer: #PARTNER
+@Search.searchable: true
 @UI.headerInfo: {
     typeName: 'Material',
-    typeNamePlural: 'Material',
+    typeNamePlural: 'Materials',
     title: {
         type: #STANDARD,
         value: 'Description'

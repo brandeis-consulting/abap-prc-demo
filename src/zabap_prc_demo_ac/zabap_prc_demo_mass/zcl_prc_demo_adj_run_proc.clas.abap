@@ -9,7 +9,8 @@ CLASS zcl_prc_demo_adj_run_proc DEFINITION
     ALIASES ty_state      FOR zif_prc_process~ty_state.
 
     CONSTANTS co_class_name     TYPE zprc_process_impl_class VALUE 'ZCL_PRC_DEMO_ADJ_RUN_PROC'.
-    CONSTANTS co_process_name   TYPE zprc_process_name       VALUE 'SRV_CTR_ADJ_RUN'.
+    " Demo processes start with DEMO_, test processes with TEST_ (not productive)
+    CONSTANTS co_process_name   TYPE zprc_process_name       VALUE 'DEMO_SRV_CTR_ADJ_RUN'.
 
 ENDCLASS.
 
