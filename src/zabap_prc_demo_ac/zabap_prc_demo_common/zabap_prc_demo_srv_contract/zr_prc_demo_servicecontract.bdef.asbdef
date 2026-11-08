@@ -2,7 +2,7 @@ managed implementation in class zbp_prc_demo_servicecontract unique;
 strict ( 2 );
 
 define behavior for ZR_PRC_DEMO_ServiceContract alias ServiceContract
-persistent table zprc_demo_srvctr ##UNMAPPED_FIELD[ERRORSTATUSCRITICALITY]
+persistent table zprc_demo_srvctr
 lock master
 authorization master ( global )
 {
