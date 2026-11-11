@@ -2,15 +2,25 @@ CLASS lcl_root DEFINITION INHERITING FROM zcl_prc_transition_handlr_base ABSTRAC
   PROTECTED SECTION.
     METHODS get_message_prefix_for_log REDEFINITION.
 
-    DATA mv_processed_object TYPE zr_prc_processedobject-ExternalProcessedObjectID.
+    "! Demo: simulates the work of a step and decides whether it fails.
+    "! Test seam SIMULATED_ERROR makes the decision deterministic in unit tests.
+    METHODS is_error_simulated RETURNING VALUE(r_result) TYPE abap_bool.
 ENDCLASS.
 
 
 CLASS lcl_root IMPLEMENTATION.
 
   METHOD get_message_prefix_for_log.
-    MESSAGE i009(zprc_demo_api_equi) WITH mv_processed_object INTO DATA(message_prefix).
+    MESSAGE i009(zprc_demo_api_equi) WITH i_processed_object_ext_id INTO DATA(message_prefix) ##NEEDED.
     r_message = sy_message( ).
+  ENDMETHOD.
+
+  METHOD is_error_simulated.
+    TEST-SEAM simulated_error.
+      WAIT UP TO 1 SECONDS.
+      " Demo: the last digit of the current second decides whether an error is simulated
+      r_result = xsdbool( CONV i( cl_abap_context_info=>get_system_time( ) ) MOD 10 = 1 ).
+    END-TEST-SEAM.
   ENDMETHOD.
 
 ENDCLASS.
@@ -26,9 +36,7 @@ ENDCLASS.
 
 CLASS lcl_validate IMPLEMENTATION.
   METHOD perform_transition.
-    WAIT UP TO 1 SECONDS.
-    " Demo: the last digit of the current second decides whether an error is simulated
-    IF CONV i( cl_abap_context_info=>get_system_time( ) ) MOD 10 = 1.
+    IF is_error_simulated( ).
       MESSAGE e001(zprc_demo_api_equi) INTO DATA(lv_dummy_message) ##NEEDED.
       get_message_handler( )->add_message_from_sy( ).
     ENDIF.
@@ -56,8 +64,7 @@ ENDCLASS.
 
 CLASS lcl_create_equi IMPLEMENTATION.
   METHOD perform_transition.
-    WAIT UP TO 1 SECONDS.
-    IF CONV i( cl_abap_context_info=>get_system_time( ) ) MOD 10 = 1.
+    IF is_error_simulated( ).
       MESSAGE e003(zprc_demo_api_equi) INTO DATA(lv_dummy_message) ##NEEDED.
       get_message_handler( )->add_message_from_sy( ).
     ENDIF.
@@ -84,8 +91,7 @@ ENDCLASS.
 
 CLASS lcl_link_serial IMPLEMENTATION.
   METHOD perform_transition.
-    WAIT UP TO 1 SECONDS.
-    IF CONV i( cl_abap_context_info=>get_system_time( ) ) MOD 10 = 1.
+    IF is_error_simulated( ).
       MESSAGE e005(zprc_demo_api_equi) INTO DATA(lv_dummy_message) ##NEEDED.
       get_message_handler( )->add_message_from_sy( ).
     ENDIF.
@@ -107,13 +113,18 @@ ENDCLASS.
 
 CLASS lcl_check_install IMPLEMENTATION.
   METHOD perform_transition.
-    WAIT UP TO 1 SECONDS.
+    DATA lv_install_required TYPE abap_bool.
 
-    " Demo: even/odd second decides the branch (fork)
-    IF CONV i( cl_abap_context_info=>get_system_time( ) ) MOD 2 = 0.
-      r_new_state = zif_prc_process=>co_finished.
-    ELSE.
+    TEST-SEAM install_required.
+      WAIT UP TO 1 SECONDS.
+      " Demo: even/odd second decides the branch (fork)
+      lv_install_required = xsdbool( CONV i( cl_abap_context_info=>get_system_time( ) ) MOD 2 <> 0 ).
+    END-TEST-SEAM.
+
+    IF lv_install_required = abap_true.
       r_new_state = zcl_prc_demo_create_equi_proc=>co_install_equi.
+    ELSE.
+      r_new_state = zif_prc_process=>co_finished.
     ENDIF.
     mv_next_state = r_new_state.
   ENDMETHOD.
@@ -139,8 +150,7 @@ ENDCLASS.
 
 CLASS lcl_install_equi IMPLEMENTATION.
   METHOD perform_transition.
-    WAIT UP TO 1 SECONDS.
-    IF CONV i( cl_abap_context_info=>get_system_time( ) ) MOD 10 = 1.
+    IF is_error_simulated( ).
       MESSAGE e007(zprc_demo_api_equi) INTO DATA(lv_dummy_message) ##NEEDED.
       get_message_handler( )->add_message_from_sy( ).
     ENDIF.

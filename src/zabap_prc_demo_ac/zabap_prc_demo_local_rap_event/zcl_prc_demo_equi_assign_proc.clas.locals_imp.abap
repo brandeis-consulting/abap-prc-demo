@@ -68,11 +68,12 @@ CLASS lcl_assign_to_srv_ctr IMPLEMENTATION.
            REPORTED DATA(ls_reported).
 
     IF line_exists( ls_failed-servicecontractitem[ %fail-cause = if_abap_behv=>cause-locked ] ).
-      " Service contract &1 is locked - the assignment will be retried
+      " Service contract &1 is locked - the step fails, the retry job tries again later.
+      " The readable message instead of the technical lock message of the BO.
       MESSAGE e004(zprc_demo_event_equi) WITH mv_contract_id INTO lv_dummy_message ##NEEDED.
-      get_message_handler( )->add_message_from_sy( i_fail_on_error_message = abap_false ).
+      get_message_handler( )->add_message_from_sy( ).
     ENDIF.
-    " FAILED (e.g. the lock) fails the step; the retry job tries again later
+    " FAILED or an error in REPORTED fails the step
     get_message_handler( )->add_eml_modify_result( i_failed   = ls_failed
                                                    i_reported = ls_reported ).
   ENDMETHOD.

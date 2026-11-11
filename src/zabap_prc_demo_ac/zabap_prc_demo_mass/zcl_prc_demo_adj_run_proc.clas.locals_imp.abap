@@ -34,14 +34,9 @@ CLASS lcl_adjust IMPLEMENTATION.
       get_message_handler( )->add_message_from_sy( ).
     ELSE.
       DO 10 TIMES.
-        IF lv_second_digit = 3.
-          MESSAGE e003(zprc_demo_adjust_run) INTO lv_dummy.
-          get_message_handler( )->add_message_from_sy( i_fail_on_error_message = abap_false ).
-        ELSE.
-          DATA(lv_item_pos) = sy-index * 10.
-          MESSAGE s002(zprc_demo_adjust_run) WITH i_processed_object_ext_id lv_item_pos INTO lv_dummy.
-          get_message_handler( )->add_message_from_sy( ).
-        ENDIF.
+        DATA(lv_item_pos) = sy-index * 10.
+        MESSAGE s002(zprc_demo_adjust_run) WITH i_processed_object_ext_id lv_item_pos INTO lv_dummy.
+        get_message_handler( )->add_message_from_sy( ).
       ENDDO.
     ENDIF.
   ENDMETHOD.
