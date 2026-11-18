@@ -83,27 +83,27 @@
     <item>
      <SPRSL>D</SPRSL>
      <MSGNR>001</MSGNR>
-     <TEXT>Position &amp;1: Produkt fehlt</TEXT>
+     <TEXT>Position &amp;1: Equipment &amp;2 ist bereits im freigegebenen Vertrag &amp;3</TEXT>
     </item>
     <item>
      <SPRSL>D</SPRSL>
      <MSGNR>002</MSGNR>
-     <TEXT>Position &amp;1: Menge muss größer als null sein</TEXT>
+     <TEXT>Servicevertrag &amp;1 freigegeben</TEXT>
     </item>
     <item>
      <SPRSL>D</SPRSL>
      <MSGNR>003</MSGNR>
-     <TEXT>Position &amp;1: Rabatt von &amp;2 % übersteigt das Maximum von 50 %</TEXT>
+     <TEXT>Servicevertrag &amp;1 nicht freigegeben: zuerst die Befunde beheben</TEXT>
     </item>
     <item>
      <SPRSL>D</SPRSL>
      <MSGNR>004</MSGNR>
-     <TEXT>Position &amp;1: Equipment fehlt</TEXT>
+     <TEXT>Konsistenzprüfung von Servicevertrag &amp;1 eingeplant</TEXT>
     </item>
     <item>
      <SPRSL>D</SPRSL>
      <MSGNR>005</MSGNR>
-     <TEXT>Servicevertrag hat keine Positionen</TEXT>
+     <TEXT>Servicevertrag &amp;1 ist bereits freigegeben</TEXT>
     </item>
     <item>
      <SPRSL>D</SPRSL>
@@ -113,7 +113,7 @@
     <item>
      <SPRSL>D</SPRSL>
      <MSGNR>007</MSGNR>
-     <TEXT>Servicevertrag &amp;1: &amp;2 Befund(e) - korrigieren und fortsetzen</TEXT>
+     <TEXT>Servicevertrag &amp;1: &amp;2 Befund(e) - korrigieren und erneut prüfen</TEXT>
     </item>
     <item>
      <SPRSL>D</SPRSL>
@@ -124,6 +124,11 @@
      <SPRSL>D</SPRSL>
      <MSGNR>009</MSGNR>
      <TEXT>Servicevertrag &amp;1 nicht gefunden</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>010</MSGNR>
+     <TEXT>Konsistenzprüfung aller nicht freigegebenen Serviceverträge gestartet</TEXT>
     </item>
    </T100_TEXTS>
   </asx:values>

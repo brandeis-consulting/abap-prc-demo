@@ -78,13 +78,13 @@ CLASS zcl_prc_demo_cons_check_proc IMPLEMENTATION.
     ENDIF.
     TRY.
         cl_system_uuid=>convert_uuid_x16_static( EXPORTING uuid     = i_processed_object_uuid
-                                                 IMPORTING uuid_c36 = DATA(lv_contract_uuid) ).
+                                                 IMPORTING uuid_c36 = DATA(contract_uuid) ).
       CATCH cx_uuid_error.
         " No link rather than a runtime error in the app
         RETURN.
     ENDTRY.
     " Intent of the deployed contract app (no draft, key UUID)
-    r_relative_url = |#ABAP_PRC_Demo_ServiceContract-show&/ServiceContract({ to_lower( lv_contract_uuid ) })|.
+    r_relative_url = |#ABAP_PRC_Demo_ServiceContract-show&/ServiceContract({ to_lower( contract_uuid ) })|.
   ENDMETHOD.
 
 ENDCLASS.

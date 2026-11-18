@@ -1,7 +1,18 @@
-"! Contracts whose consistency check is triggered with the save (actions Check and Release)
+"! Contracts whose consistency check starts in the Processing Center with the save -
+"! one buffer per action that fills it, cleared in CLEANUP
 CLASS lcl_buffer DEFINITION FINAL.
   PUBLIC SECTION.
-    CLASS-DATA check_contracts TYPE zcl_prc_demo_cons_chk_trigger=>tt_contract.
+    CLASS-DATA check_consistency TYPE zcl_prc_demo_cons_chk_trigger=>tt_contract.
+    CLASS-DATA release           TYPE zcl_prc_demo_cons_chk_trigger=>tt_contract.
+
+    CLASS-METHODS clear.
+ENDCLASS.
+
+
+CLASS lcl_buffer IMPLEMENTATION.
+  METHOD clear.
+    CLEAR: check_consistency, release.
+  ENDMETHOD.
 ENDCLASS.
 
 
@@ -26,8 +37,13 @@ CLASS lcl_consistency DEFINITION FINAL.
     CLASS-METHODS check IMPORTING i_contracts      TYPE tt_uuid
                         RETURNING VALUE(r_results) TYPE tt_result.
 
-    "! Sets the error status of the contracts to the result of the check, if it differs
-    CLASS-METHODS set_error_status IMPORTING i_results TYPE tt_result.
+    "! Sets the error status of the contracts to the result of the check.
+    "!
+    "! @parameter i_results | Results of CHECK.
+    "! @parameter i_always  | ABAP_TRUE: also if unchanged - the contract is part of the save
+    "!                        and its check starts there (actions); else only if it differs.
+    CLASS-METHODS set_error_status IMPORTING i_results TYPE tt_result
+                                             i_always  TYPE abap_bool DEFAULT abap_false.
 ENDCLASS.
 
 
@@ -66,7 +82,7 @@ CLASS lcl_consistency IMPLEMENTATION.
                                WHEN result-conflicts IS INITIAL
                                THEN zcl_prc_demo_cons_check_proc=>error_status-no_error
                                ELSE zcl_prc_demo_cons_check_proc=>error_status-contains_error ).
-      IF error_status <> result-error_status.
+      IF i_always = abap_true OR error_status <> result-error_status.
         APPEND VALUE #( UUID = result-uuid ErrorStatus = error_status ) TO updates.
       ENDIF.
     ENDLOOP.
@@ -146,6 +162,7 @@ CLASS lhc_ServiceContract IMPLEMENTATION.
     DATA(job_name) = |Service Contract Adjustment Run - { cl_abap_context_info=>get_system_date( ) }, |
                   && |{ cl_abap_context_info=>get_system_time( ) } - { cl_abap_context_info=>get_user_technical_name( ) }|.
 
+    " Simulation is a property of the run: the job and its processed objects read it there
     DATA(run_uuid) = zcl_prc_run_initiator=>get_instance( )->schedule_run(
       EXPORTING
         i_selection_json    = keys[ 1 ]-%param-selectoptions
@@ -156,6 +173,7 @@ CLASS lhc_ServiceContract IMPLEMENTATION.
         i_application_name  = zcl_prc_demo_adjust_run_job=>co_application_name
         i_job_name          = job_name
         i_job_template_name = zcl_prc_demo_adjust_run_job=>co_job_template_name
+        i_simulation        = keys[ 1 ]-%param-Simulation
       IMPORTING
         e_messages          = messages ).
 
@@ -175,9 +193,11 @@ CLASS lhc_ServiceContract IMPLEMENTATION.
 
 
   METHOD checkConsistency.
-    " Transient check now: the user sees the findings and the error status at once
+    " Transient check now: the user sees the findings and the error status at once.
+    " The error status is always written, so the contract is part of the save that starts the check.
     DATA(results) = lcl_consistency=>check( VALUE #( FOR k IN keys ( k-UUID ) ) ).
-    lcl_consistency=>set_error_status( results ).
+    lcl_consistency=>set_error_status( i_results = results
+                                       i_always  = abap_true ).
 
     LOOP AT results INTO DATA(check_result).
       LOOP AT to_behv_messages( i_conflicts = check_result-conflicts
@@ -190,7 +210,7 @@ CLASS lhc_ServiceContract IMPLEMENTATION.
                                                severity = if_abap_behv_message=>severity-information
                                                v1       = check_result-contract_id ) ) TO reported-servicecontract.
       " The documented check in the Processing Center starts with the save
-      APPEND VALUE #( uuid = check_result-uuid id = check_result-contract_id ) TO lcl_buffer=>check_contracts.
+      APPEND VALUE #( uuid = check_result-uuid id = check_result-contract_id ) TO lcl_buffer=>check_consistency.
     ENDLOOP.
 
     result = VALUE #( FOR r IN read_result( VALUE #( FOR k IN keys ( k-UUID ) ) ) ( %tky = r-%tky %param = r ) ).
@@ -200,6 +220,7 @@ CLASS lhc_ServiceContract IMPLEMENTATION.
   METHOD release.
     DATA(results) = lcl_consistency=>check( VALUE #( FOR k IN keys ( k-UUID ) ) ).
     DATA releases TYPE TABLE FOR UPDATE zr_prc_demo_servicecontract\\ServiceContract.
+    DATA checked  TYPE lcl_consistency=>tt_result.
 
     LOOP AT results INTO DATA(check_result).
       IF check_result-lifecycle_status = zcl_prc_demo_cons_checker=>co_released.
@@ -232,10 +253,13 @@ CLASS lhc_ServiceContract IMPLEMENTATION.
                                                  v1       = check_result-contract_id ) ) TO reported-servicecontract.
       ENDIF.
       " Release also checks: the documented check in the Processing Center starts with the save
-      APPEND VALUE #( uuid = check_result-uuid id = check_result-contract_id ) TO lcl_buffer=>check_contracts.
+      APPEND VALUE #( uuid = check_result-uuid id = check_result-contract_id ) TO lcl_buffer=>release.
+      APPEND check_result TO checked.
     ENDLOOP.
 
-    lcl_consistency=>set_error_status( results ).
+    " Always written, so the contract is part of the save that starts the check
+    lcl_consistency=>set_error_status( i_results = checked
+                                       i_always  = abap_true ).
     IF releases IS NOT INITIAL.
       " The validation checks again with the save - also for releases via API
       MODIFY ENTITIES OF zr_prc_demo_servicecontract IN LOCAL MODE
@@ -392,27 +416,35 @@ ENDCLASS.
 "! Processing Center - objects are written and bgPF is scheduled with this save
 CLASS lsc_ServiceContract DEFINITION INHERITING FROM cl_abap_behavior_saver.
   PROTECTED SECTION.
-    METHODS save_modified    REDEFINITION.
-    METHODS cleanup_finalize REDEFINITION.
+    METHODS save_modified REDEFINITION.
+    METHODS cleanup       REDEFINITION.
 ENDCLASS.
 
 
 CLASS lsc_ServiceContract IMPLEMENTATION.
 
   METHOD save_modified.
+    " Defensive: only contracts that are part of this save (both actions always write the error status)
+    DATA contracts TYPE zcl_prc_demo_cons_chk_trigger=>tt_contract.
+    LOOP AT VALUE zcl_prc_demo_cons_chk_trigger=>tt_contract( ( LINES OF lcl_buffer=>check_consistency )
+                                                               ( LINES OF lcl_buffer=>release ) ) INTO DATA(contract).
+      IF line_exists( update-servicecontract[ KEY id COMPONENTS UUID = contract-uuid ] ).
+        APPEND contract TO contracts.
+      ENDIF.
+    ENDLOOP.
+
     TRY.
-        zcl_prc_demo_cons_chk_trigger=>check( lcl_buffer=>check_contracts ).
+        zcl_prc_demo_cons_chk_trigger=>check( contracts ).
       CATCH cx_bgmc ##NO_HANDLER.
         " bgPF not available: new checks are written and wait for the retry job;
         " open checks are processed again by the retry job when due
     ENDTRY.
-    CLEAR lcl_buffer=>check_contracts.
   ENDMETHOD.
 
 
-  METHOD cleanup_finalize.
-    " A rolled-back LUW must not trigger checks with the next save
-    CLEAR lcl_buffer=>check_contracts.
+  METHOD cleanup.
+    " End of every save and after ROLLBACK ENTITIES: nothing reaches a later save
+    lcl_buffer=>clear( ).
   ENDMETHOD.
 
 ENDCLASS.

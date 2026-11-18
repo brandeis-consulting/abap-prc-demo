@@ -14,5 +14,9 @@ define root abstract entity ZA_PRC_DEMO_AdjustParamSelOpt
   
   @EndUserText.label: 'Discount (in %)'
   DiscountInPercent: abap.dec( 10, 0 );
+
+  // Simulation run: the contracts are processed, nothing is saved
+  @EndUserText.label: 'Simulation'
+  Simulation: abap_boolean;
   
 }
