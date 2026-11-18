@@ -1,0 +1,24 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeName: 'Legacy Document', typeNamePlural: 'Legacy Documents', title: { value: 'OrderID' }, description: { value: 'Description' } }
+annotate entity ZC_PRC_DEMO_BR_Persist with
+{
+  @UI.facet: [ { id: 'Document', purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, label: 'Document', position: 10 } ]
+  @EndUserText.label: 'Document (BAPI number)'
+  @UI: { lineItem: [ { position: 10 } ], identification: [ { position: 10 } ], selectionField: [ { position: 10 } ] }
+  OrderID;
+
+  @EndUserText.label: 'Description'
+  @UI: { lineItem: [ { position: 20 } ], identification: [ { position: 20 } ] }
+  Description;
+
+  @UI: { lineItem: [ { position: 30 } ], identification: [ { position: 30 } ], selectionField: [ { position: 20 } ] }
+  ErrorMode;
+
+  @UI.hidden: true
+  ErrorModeText;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+  @UI.hidden: true
+  LastChangedAt;
+}

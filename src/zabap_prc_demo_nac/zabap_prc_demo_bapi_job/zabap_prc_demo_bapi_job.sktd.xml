@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SKTD" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <SKTD>
+    <METADATA>
+     <DESCRIPTION>Documentation for ZABAP_PRC_DEMO_BAPI_JOB</DESCRIPTION>
+     <LANGUAGE>EN</LANGUAGE>
+     <ABAP_LANGU_VERSION>0</ABAP_LANGU_VERSION>
+    </METADATA>
+    <REF_OBJECT>
+     <TYPE>DEVC/K</TYPE>
+     <NAME>ZABAP_PRC_DEMO_BAPI_JOB</NAME>
+    </REF_OBJECT>
+    <ELEMENTS>
+     <item>
+      <ID>ZABAP_PRC_DEMO_BAPI_JOB</ID>
+      <REF>
+       <URI>/sap/bc/adt/packages/zabap_prc_demo_bapi_job</URI>
+       <TYPE>DEVC/K</TYPE>
+       <NAME>ZABAP_PRC_DEMO_BAPI_JOB</NAME>
+       <DESCRIPTION>ABAP-PRC Demo: BAPIs in application jobs</DESCRIPTION>
+      </REF>
+      <TEXT>IyBBQkFQLVBSQyBEZW1vOiBCQVBJcyBpbiBhcHBsaWNhdGlvbiBqb2JzIC0gU3RhbmRhcmQgQUJB
+UCBwYXJ0CgpUaGUgbWFpbiBkb2N1bWVudGF0aW9uIGlzIGF0IGBaQUJBUF9QUkNfREVNT19CQVBJ
+X0pPQl9BQ2AgKEFCQVAgQ2xvdWQpLiBUaGlzIHBhY2thZ2UgaG9sZHMgb25seSB3aGF0IHNpbXVs
+YXRlcyBTQVAgc3RhbmRhcmQgYW5kIHRoZSByZWxlYXNlZCBicmlkZ2UgdG8gaXQ6Cgp8IFBhY2th
+Z2UgfCBDb250ZW50IHwKfC0tLS0tLS0tLXwtLS0tLS0tLS18CnwgYFpBQkFQX1BSQ19ERU1PX0JK
+X0NPTU1PTmAgfCBGYWtlIEJBUElzIGBaX1BSQ19ERU1PX0JKX0NSRUFURWAgKEEpIGFuZCBgWl9Q
+UkNfREVNT19CSl9GT0xMT1dVUGAgKEIpLCB1cGRhdGUgbW9kdWxlcywgbGVnYWN5IHRhYmxlcyBg
+WlBSQ19ERU1PX0JKX0xFR2AgLyBgWlBSQ19ERU1PX0JKX0ZVUGAuIEJyaWRnZSByZWxlYXNlZCB3
+aXRoIGNvbnRyYWN0IEMxOiBgWkNMX1BSQ19ERU1PX0JKX0JBUElfV1JBUGAgKGNhbGxzIHRoZSBC
+QVBJcywgY2F0Y2hlcyBgTUVTU0FHRSBlYCB2aWEgYEVYQ0VQVElPTlMgZXJyb3JfbWVzc2FnZWAs
+IHJlc2V0cyB0aGUgZGVtbyBkb2N1bWVudHMpIGFuZCBgWklfUFJDX0RFTU9fQkpfTGVnYWN5RG9j
+YCAocmVhZCBhY2Nlc3MpLiB8CgpBQkFQIENsb3VkIG1heSBvbmx5IHVzZSByZWxlYXNlZCBvYmpl
+Y3RzOiBib3RoIGpvYnMgYW5kIHRoZSBwcm9jZXNzIGNsYXNzIGNhbGwgdGhlIEJBUElzIHRocm91
+Z2ggdGhlIHdyYXBwZXIgYW5kIHJlYWQgdGhlIGxlZ2FjeSBkb2N1bWVudHMgdGhyb3VnaCB0aGUg
+cmVsZWFzZWQgdmlldyAoQkFQSSAtPiB3cmFwcGVyIC0+IEMxKS4=</TEXT>
+      <CAN_HAVE_DOCUMENTATION>X</CAN_HAVE_DOCUMENTATION>
+      <LINKS>
+       <item>
+        <HREF>/sap/bc/adt/repository/informationsystem/elementinfo?path=zabap_prc_demo_bapi_job&amp;type=devc/k</HREF>
+        <REL>http://www.sap.com/adt/relations/elementinfo</REL>
+        <TYPE>application/vnd.sap.adt.elementinfo+xml</TYPE>
+        <TITLE>Show Element Information</TITLE>
+       </item>
+      </LINKS>
+      <SHORTTEXT_OBLIGATION>forbidden</SHORTTEXT_OBLIGATION>
+      <LONGTEXT_OBLIGATION>optional</LONGTEXT_OBLIGATION>
+     </item>
+    </ELEMENTS>
+   </SKTD>
+  </asx:values>
+ </asx:abap>
+</abapGit>

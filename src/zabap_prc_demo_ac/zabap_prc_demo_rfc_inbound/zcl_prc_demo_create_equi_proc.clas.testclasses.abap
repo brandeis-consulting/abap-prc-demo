@@ -58,7 +58,7 @@ CLASS ltc_validate IMPLEMENTATION.
         perform_transition( zif_prc_process=>co_start ).
         cl_abap_unit_assert=>fail( `Transition should have failed` ).
       CATCH zcx_prc_unit_of_work_failed.
-        cl_abap_unit_assert=>assert_true( message_handler->has_errors( ) ).
+        cl_abap_unit_assert=>assert_true( message_handler->has_failed( ) ).
         " Header: the failure message of the transition - the cause stays a detail
         assert_header( i_msgid = co_msgid i_msgty = 'E' i_msgno = '010' ).
         assert_message_exists( i_msgid = co_msgid i_msgty = 'E' i_msgno = '001' ).

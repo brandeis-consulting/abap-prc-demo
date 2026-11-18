@@ -1,0 +1,19 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "ABAP-PRC Demo: Consistency Check",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "catalogName": "ZAJC_PRC_DEMO_CONS_CHECK"
+  },
+  "parameters": {
+    "singleValueParameters": [
+      {
+        "name": "P_UUID",
+        "value": ""
+      }
+    ]
+  }
+}

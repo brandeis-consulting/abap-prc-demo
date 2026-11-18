@@ -9,17 +9,17 @@
 
 @UI.presentationVariant: [ { qualifier: 'qPV',
                              id: '3',
-                             text: 'Hello PV',
+                             text: 'Sorted by Service Contract',
                              maxItems: 100,
                              sortOrder: [ { by: 'S_CTR', direction: #ASC } ] } ]
 
 @UI.selectionPresentationVariant: [ { qualifier: 'qSPV',
                                       id: '1',
-                                      text: 'Hello SPV',
+                                      text: 'Service Contracts',
                                       selectionVariantQualifier: 'qSV',
                                       presentationVariantQualifier: 'qPV' } ]
 
-@UI.selectionVariant: [ { qualifier: 'qSV', id: '2', text: 'Hello SV' } ]
+@UI.selectionVariant: [ { qualifier: 'qSV', id: '2', text: 'All Service Contracts' } ]
 
 annotate view ZC_PRC_DEMO_ServiceContract with
 
@@ -27,6 +27,7 @@ annotate view ZC_PRC_DEMO_ServiceContract with
   @UI.hidden
   UUID;
 
+  // Consistency check demo: Check and Release per contract, a run for all unreleased contracts
   @Consumption.valueHelpDefinition: [ { entity: { name: 'ZI_PRC_DEMO_ServiceContract', element: 'ServiceContractID' } } ]
   @EndUserText.label: 'Service Contract'
   @UI.facet: [ { id: 'Main', type: #IDENTIFICATION_REFERENCE, label: 'Service Contract Details', position: 10 },
@@ -35,11 +36,15 @@ annotate view ZC_PRC_DEMO_ServiceContract with
                  label: 'Service Contract Items',
                  targetElement: '_ServiceContractItem',
                  position: 20 } ]
-  @UI.identification: [ { position: 10 } ]
-  @UI.lineItem: [ { position: 10 } ]
+  @UI.identification: [ { position: 10 },
+                        { type: #FOR_ACTION, dataAction: 'checkConsistency', label: 'Check' },
+                        { type: #FOR_ACTION, dataAction: 'release',          label: 'Release' } ]
+  @UI.lineItem: [ { position: 10 },
+                  { type: #FOR_ACTION, dataAction: 'checkConsistency',    label: 'Check' },
+                  { type: #FOR_ACTION, dataAction: 'release',             label: 'Release' },
+                  { type: #FOR_ACTION, dataAction: 'checkAllConsistency', label: 'Check All Unreleased' } ]
   @UI.selectionField: [ { position: 10 } ]
   @UI.textArrangement: #TEXT_LAST
-//  servicecontractid;
   S_CTR;
 
   @UI.hidden
@@ -64,7 +69,6 @@ annotate view ZC_PRC_DEMO_ServiceContract with
                     semanticObjectAction: 'show',
                     semanticObjectBinding: [ { element: 'Identifier', localElement: 'S_SOLD' } ] } ]
   @UI.selectionField: [ { position: 30 } ]
-  //  SoldToPartyID;
   @UI.textArrangement: #TEXT_FIRST
   S_SOLD;
 
@@ -81,21 +85,18 @@ annotate view ZC_PRC_DEMO_ServiceContract with
                     semanticObjectAction: 'show',
                     semanticObjectBinding: [ { element: 'Identifier', localElement: 'S_SHIP' } ] } ]
   @UI.selectionField: [ { position: 40 } ]
-  //  ShipToPartyID;
   S_SHIP;
 
   @Consumption.valueHelpDefinition: [ { entity: { name: 'ZI_PRC_DEMO_LifecycleStatus', element: 'Value' } } ]
   @UI.identification: [ { position: 50 } ]
   @UI.lineItem: [ { position: 50 } ]
   @UI.selectionField: [ { position: 50 } ]
-  //  LifecycleStatus;
   S_LIFE;
 
   @Consumption.valueHelpDefinition: [ { entity: { name: 'ZI_PRC_DEMO_ErrorStatus', element: 'Value' } } ]
   @UI.identification: [ { position: 55 } ]
   @UI.lineItem: [ { position: 55 } ]
   @UI.selectionField: [ { position: 55 } ]
-  //  ErrorStatus;
   S_ERR;
 
   @UI.hidden

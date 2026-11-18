@@ -8,6 +8,10 @@ define behavior for ZC_PRC_DEMO_ServiceContract alias ServiceContract
   use delete;
 
   use action adjustViaSelectOptions;
-//  use function GetDefaultsForAdjSelOpt;
+
+  // Consistency check demo
+  use action checkConsistency;
+  use action release;
+  use action checkAllConsistency;
 
 }

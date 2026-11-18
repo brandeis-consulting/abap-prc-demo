@@ -1,0 +1,15 @@
+projection;
+strict ( 2 );
+use draft;
+
+define behavior for ZC_PRC_DEMO_BR_Persist alias LegacyOrder
+{
+  use create;
+  use update;
+
+  use action Activate;
+  use action Discard;
+  use action Edit;
+  use action Resume;
+  use action Prepare;
+}

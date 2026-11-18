@@ -1,4 +1,4 @@
-managed implementation in class zbp_prc_demo_servicecontract unique;
+managed with additional save implementation in class zbp_prc_demo_servicecontract unique;
 strict ( 2 );
 
 define behavior for ZR_PRC_DEMO_ServiceContract alias ServiceContract
@@ -12,7 +12,15 @@ authorization master ( global )
   field ( readonly, numbering : managed ) UUID;
   association _ServiceContractItem { create; }
 
-  static action adjustViaSelectOptions parameter ZA_PRC_DEMO_AdjustParamSelOpt result [1] ZA_PRC_RunActionResponse;// { default function GetDefaultsForAdjSelOpt; }
+  static action adjustViaSelectOptions parameter ZA_PRC_DEMO_AdjustParamSelOpt result [1] ZA_PRC_RunActionResponse;
+
+  // Consistency check demo: an equipment must not be in two released contracts
+  action checkConsistency result [1] $self;
+  action ( features : instance ) release result [1] $self;
+  static action checkAllConsistency result [1] ZA_PRC_RunActionResponse;
+
+  validation checkReleasedEquipment on save { create; field LifecycleStatus; }
+  determination setErrorStatus on save { create; field LifecycleStatus; }
 
   mapping for zprc_demo_srvctr
     {
@@ -42,6 +50,11 @@ authorization dependent by _ServiceContract
   field ( readonly ) ParentUUID;
 
   association _ServiceContract;
+
+  // Consistency check demo: same rule when an equipment is entered
+  validation checkEquipment on save { create; field EquipmentId; }
+  determination setContractErrorStatus on save { create; field EquipmentId; }
+
   mapping for zprc_demo_sc_itm
     {
       UUID            = UUID;

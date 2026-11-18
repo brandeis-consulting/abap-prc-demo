@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZPRC_DEMO_BAPI_RAP</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>BAPI and RAP: Messages</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_BAPI_RAP</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Demo Message - BAPI A: Description is missing</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_BAPI_RAP</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Demo Message - BAPI B: Document &amp;1 not found on database</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_BAPI_RAP</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Demo Message - BAPI A: No authorization for ZPRC_PROC</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_BAPI_RAP</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Demo Message - BAPI A: Number assignment locked by &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_BAPI_RAP</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Demo Message - PRC: No legacy document found for order &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_BAPI_RAP</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Demo Message - BAPI A: Document &amp;1 saved successfully</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_BAPI_RAP</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Demo Message - BAPI B: Follow-up document for &amp;1 saved successfully</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_BAPI_RAP</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>Demo Message - BAPI A: Provoked - Check before save: Error message</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_BAPI_RAP</ARBGB>
+     <MSGNR>021</MSGNR>
+     <TEXT>Demo Message - BAPI A: Provoked - Save: Error message</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_BAPI_RAP</ARBGB>
+     <MSGNR>022</MSGNR>
+     <TEXT>Demo Message - BAPI A: Provoked - Save: MESSAGE E</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_BAPI_RAP</ARBGB>
+     <MSGNR>023</MSGNR>
+     <TEXT>Demo Message - BAPI A: Provoked - Save: MESSAGE X</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_BAPI_RAP</ARBGB>
+     <MSGNR>024</MSGNR>
+     <TEXT>Demo Message - BAPI A: Provoked - Save: Lock error (locked by &amp;1)</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_BAPI_RAP</ARBGB>
+     <MSGNR>025</MSGNR>
+     <TEXT>Demo Message - BAPI A: Provoked - Update task: MESSAGE A</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_BAPI_RAP</ARBGB>
+     <MSGNR>026</MSGNR>
+     <TEXT>Demo Message - BAPI A: Provoked - Update task: MESSAGE X</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_BAPI_RAP</ARBGB>
+     <MSGNR>030</MSGNR>
+     <TEXT>Demo Message - PRC: &amp;1 started asynchronously - refresh for the result</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_BAPI_RAP</ARBGB>
+     <MSGNR>031</MSGNR>
+     <TEXT>Demo Message - PRC: &amp;1 resumed asynchronously - refresh for the result</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_BAPI_RAP</ARBGB>
+     <MSGNR>032</MSGNR>
+     <TEXT>Demo Message - PRC: Legacy document &amp;1 created</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_BAPI_RAP</ARBGB>
+     <MSGNR>033</MSGNR>
+     <TEXT>Demo Message - PRC: Follow-up created for legacy document &amp;1</TEXT>
+    </T100>
+   </T100>
+   <I18N_LANGS>
+    <LANGU>D</LANGU>
+   </I18N_LANGS>
+   <T100T>
+    <T100T>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZPRC_DEMO_BAPI_RAP</ARBGB>
+     <STEXT>BAPI und RAP: Meldungen</STEXT>
+    </T100T>
+   </T100T>
+   <T100_TEXTS>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>001</MSGNR>
+     <TEXT>Demo-Meldung - BAPI A: Beschreibung fehlt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>003</MSGNR>
+     <TEXT>Demo-Meldung - BAPI B: Beleg &amp;1 nicht auf der Datenbank gefunden</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>004</MSGNR>
+     <TEXT>Demo-Meldung - BAPI A: Keine Berechtigung für ZPRC_PROC</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>005</MSGNR>
+     <TEXT>Demo-Meldung - BAPI A: Nummernvergabe gesperrt durch &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>006</MSGNR>
+     <TEXT>Demo-Meldung - PRC: Kein Legacy-Beleg zu Auftrag &amp;1 gefunden</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>010</MSGNR>
+     <TEXT>Demo-Meldung - BAPI A: Beleg &amp;1 erfolgreich gesichert</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>011</MSGNR>
+     <TEXT>Demo-Meldung - BAPI B: Folgebeleg zu &amp;1 erfolgreich gesichert</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>020</MSGNR>
+     <TEXT>Demo-Meldung - BAPI A: Provoziert - Prüfung vor Sichern: Fehlermeldung</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>021</MSGNR>
+     <TEXT>Demo-Meldung - BAPI A: Provoziert - Sichern: Fehlermeldung</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>022</MSGNR>
+     <TEXT>Demo-Meldung - BAPI A: Provoziert - Sichern: MESSAGE E</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>023</MSGNR>
+     <TEXT>Demo-Meldung - BAPI A: Provoziert - Sichern: MESSAGE X</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>024</MSGNR>
+     <TEXT>Demo-Meldung - BAPI A: Provoziert - Sichern: Sperrfehler (Sperre: &amp;1)</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>025</MSGNR>
+     <TEXT>Demo-Meldung - BAPI A: Provoziert - Verbuchung: MESSAGE A</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>026</MSGNR>
+     <TEXT>Demo-Meldung - BAPI A: Provoziert - Verbuchung: MESSAGE X</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>030</MSGNR>
+     <TEXT>Demo-Meldung - PRC: &amp;1 asynchron gestartet - Ergebnis per Aktualisieren</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>031</MSGNR>
+     <TEXT>Demo-Meldung - PRC: &amp;1 asynchron fortgesetzt - Ergebnis per Aktualisieren</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>032</MSGNR>
+     <TEXT>Demo-Meldung - PRC: Legacy-Beleg &amp;1 angelegt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>033</MSGNR>
+     <TEXT>Demo-Meldung - PRC: Folgebeleg zu Legacy-Beleg &amp;1 angelegt</TEXT>
+    </item>
+   </T100_TEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,4 @@
+@EndUserText.label: 'BAPI & RAP 2: BAPI as persistence'
+define service ZUI_PRC_DEMO_BR_PERSIST_O4 {
+  expose ZC_PRC_DEMO_BR_Persist as LegacyOrder;
+}

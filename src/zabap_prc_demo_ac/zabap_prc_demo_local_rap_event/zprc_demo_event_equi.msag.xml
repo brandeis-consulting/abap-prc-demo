@@ -39,6 +39,43 @@
      <TEXT>Equipment &amp;1:</TEXT>
     </T100>
    </T100>
+   <I18N_LANGS>
+    <LANGU>D</LANGU>
+   </I18N_LANGS>
+   <T100T>
+    <T100T>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZPRC_DEMO_EVENT_EQUI</ARBGB>
+     <STEXT>Event-Verarbeitung für Equipments</STEXT>
+    </T100T>
+   </T100T>
+   <T100_TEXTS>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>001</MSGNR>
+     <TEXT>Equipment &amp;1 Servicevertrag &amp;2, Position &amp;3 zugeordnet</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>002</MSGNR>
+     <TEXT>Equipment &amp;1 konnte keinem Servicevertrag zugeordnet werden</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>003</MSGNR>
+     <TEXT>Keine freie Position in einem offenen oder laufenden Servicevertrag</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>004</MSGNR>
+     <TEXT>Servicevertrag &amp;1 ist gesperrt - die Zuordnung wird wiederholt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>005</MSGNR>
+     <TEXT>Equipment &amp;1:</TEXT>
+    </item>
+   </T100_TEXTS>
   </asx:values>
  </asx:abap>
 </abapGit>

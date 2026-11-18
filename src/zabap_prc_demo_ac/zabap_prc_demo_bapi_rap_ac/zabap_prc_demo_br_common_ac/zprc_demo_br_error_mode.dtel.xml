@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZPRC_DEMO_BR_ERROR_MODE</ROLLNAME>
+    <DDLANGUAGE>E</DDLANGUAGE>
+    <DOMNAME>ZPRC_DEMO_BR_ERROR_MODE</DOMNAME>
+    <HEADLEN>19</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>19</SCRLEN2>
+    <SCRLEN3>19</SCRLEN3>
+    <DDTEXT>BAPI &amp; RAP: Provoked error mode</DDTEXT>
+    <REPTEXT>Provoked error mode</REPTEXT>
+    <SCRTEXT_S>Error mode</SCRTEXT_S>
+    <SCRTEXT_M>Provoked error mode</SCRTEXT_M>
+    <SCRTEXT_L>Provoked error mode</SCRTEXT_L>
+    <DTELMASTER>E</DTELMASTER>
+    <REFKIND>D</REFKIND>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+   </DD04V>
+   <DD04L_EXTRA>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+   </DD04L_EXTRA>
+   <I18N_LANGS>
+    <LANGU>D</LANGU>
+   </I18N_LANGS>
+   <DD04_TEXTS>
+    <item>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDTEXT>BAPI &amp; RAP: Provozierter Fehlermodus</DDTEXT>
+     <REPTEXT>Prov. Fehlermodus</REPTEXT>
+     <SCRTEXT_S>Fehlermod.</SCRTEXT_S>
+     <SCRTEXT_M>Prov. Fehlermodus</SCRTEXT_M>
+     <SCRTEXT_L>Prov. Fehlermodus</SCRTEXT_L>
+    </item>
+   </DD04_TEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -6,11 +6,11 @@
     <ROLLNAME>ZPRC_DEMO_ERROR_STATUS</ROLLNAME>
     <DDLANGUAGE>E</DDLANGUAGE>
     <DOMNAME>ZPRC_DEMO_ERROR_STATUS</DOMNAME>
-    <HEADLEN>55</HEADLEN>
-    <SCRLEN1>10</SCRLEN1>
-    <SCRLEN2>20</SCRLEN2>
-    <SCRLEN3>40</SCRLEN3>
-    <DDTEXT>Lifecycelstatus</DDTEXT>
+    <HEADLEN>12</HEADLEN>
+    <SCRLEN1>05</SCRLEN1>
+    <SCRLEN2>12</SCRLEN2>
+    <SCRLEN3>12</SCRLEN3>
+    <DDTEXT>Error Status</DDTEXT>
     <REPTEXT>Error Status</REPTEXT>
     <SCRTEXT_S>Error</SCRTEXT_S>
     <SCRTEXT_M>Error Status</SCRTEXT_M>
@@ -22,6 +22,19 @@
    <DD04L_EXTRA>
     <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
    </DD04L_EXTRA>
+   <I18N_LANGS>
+    <LANGU>D</LANGU>
+   </I18N_LANGS>
+   <DD04_TEXTS>
+    <item>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDTEXT>Fehlerstatus</DDTEXT>
+     <REPTEXT>Fehlerstatus</REPTEXT>
+     <SCRTEXT_S>Fehl.</SCRTEXT_S>
+     <SCRTEXT_M>Fehlerstatus</SCRTEXT_M>
+     <SCRTEXT_L>Fehlerstatus</SCRTEXT_L>
+    </item>
+   </DD04_TEXTS>
   </asx:values>
  </asx:abap>
 </abapGit>

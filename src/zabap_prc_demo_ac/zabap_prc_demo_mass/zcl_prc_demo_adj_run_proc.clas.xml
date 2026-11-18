@@ -5,12 +5,18 @@
    <VSEOCLASS>
     <CLSNAME>ZCL_PRC_DEMO_ADJ_RUN_PROC</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Order Plant Equi</DESCRIPT>
+    <DESCRIPT>ABAP-PRC Demo: Process for the adjustment run</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
     <UNICODE>5</UNICODE>
    </VSEOCLASS>
+   <DESCRIPTIONS_CLASS>
+    <SEOCLASSTX>
+     <LANGU>D</LANGU>
+     <DESCRIPT>ABAP-PRC Demo: Prozess für den Anpassungslauf</DESCRIPT>
+    </SEOCLASSTX>
+   </DESCRIPTIONS_CLASS>
   </asx:values>
  </asx:abap>
 </abapGit>

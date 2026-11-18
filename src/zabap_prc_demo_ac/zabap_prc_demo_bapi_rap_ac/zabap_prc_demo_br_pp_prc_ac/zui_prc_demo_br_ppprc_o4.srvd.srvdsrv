@@ -1,0 +1,7 @@
+@EndUserText.label: 'BAPI & RAP 4: Post-processing with PRC'
+define service ZUI_PRC_DEMO_BR_PPPRC_O4 {
+  expose ZC_PRC_DEMO_BR_PpPrc    as DemoOrder;
+  expose ZC_PRC_ProcessedObject  as ProcessedObject;
+  expose ZC_PRC_ProcessedStep    as ProcessedStep;
+  expose ZC_PRC_ProcessedMessage as ProcessedMessage;
+}

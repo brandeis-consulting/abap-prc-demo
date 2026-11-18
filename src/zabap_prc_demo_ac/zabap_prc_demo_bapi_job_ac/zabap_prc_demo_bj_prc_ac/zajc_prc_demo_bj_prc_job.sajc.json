@@ -1,0 +1,25 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "BAPI and Job: Demo - with ABAP PRC",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "className": "ZCL_PRC_DEMO_BJ_PRC_JOB"
+  },
+  "parameters": [
+    {
+      "name": "S_ORDER"
+    },
+    {
+      "name": "P_ERROR"
+    },
+    {
+      "name": "P_NTH"
+    },
+    {
+      "name": "P_UUID"
+    }
+  ]
+}

@@ -28,7 +28,7 @@ CLASS zcl_prc_demo_common_init IMPLEMENTATION.
         DELETE FROM zprc_demo_srvctr.
         DELETE FROM zprc_demo_sc_itm.
 
-        DATA lt_bupa_data TYPE STANDARD TABLE OF zprc_demo_bupa WITH DEFAULT KEY.
+        DATA lt_bupa_data TYPE STANDARD TABLE OF zprc_demo_bupa WITH EMPTY KEY.
 
         lt_bupa_data = VALUE #( ( id = '1000000001' description = 'Northern Peak Machinery Ltd.' )
                                 ( id = '1000000002' description = 'Blueforge Industrial Systems Inc.' )
@@ -47,13 +47,13 @@ CLASS zcl_prc_demo_common_init IMPLEMENTATION.
                                 ( id = '1000000015' description = 'Coreaxis Manufacturing Group' ) ).
         INSERT zprc_demo_bupa FROM TABLE @lt_bupa_data.
 
-        DATA lt_eq_category TYPE STANDARD TABLE OF zprc_demo_eq_cat WITH DEFAULT KEY.
+        DATA lt_eq_category TYPE STANDARD TABLE OF zprc_demo_eq_cat WITH EMPTY KEY.
         lt_eq_category = VALUE #( ( id = 'EQC0000001' description = 'Conveyor System' )
                                   ( id = 'EQC0000002' description = 'Shuttle System' )
                                   ( id = 'EQC0000003' description = 'Warehouse Robot' ) ).
         INSERT zprc_demo_eq_cat FROM TABLE @lt_eq_category.
 
-        DATA lt_materials TYPE STANDARD TABLE OF zprc_demo_mat WITH DEFAULT KEY.
+        DATA lt_materials TYPE STANDARD TABLE OF zprc_demo_mat WITH EMPTY KEY.
         lt_materials = VALUE #( " --- for all equipment categories ---
                                 ( id = 'MAT0000001' description = 'Maintenance Service' )
                                 ( id = 'MAT0000002' description = 'Repair Service' )
@@ -64,7 +64,7 @@ CLASS zcl_prc_demo_common_init IMPLEMENTATION.
                                 ( id = 'MAT0000005' description = 'Robot Software Update' ) ).
         INSERT zprc_demo_mat FROM TABLE @lt_materials.
 
-        DATA lt_equipments TYPE STANDARD TABLE OF zprc_demo_equi WITH DEFAULT KEY.
+        DATA lt_equipments TYPE STANDARD TABLE OF zprc_demo_equi WITH EMPTY KEY.
 
         DO 10000 TIMES.
           DATA(idx) = sy-index.
@@ -77,8 +77,8 @@ CLASS zcl_prc_demo_common_init IMPLEMENTATION.
 
         INSERT zprc_demo_equi FROM TABLE @lt_equipments.
 
-        DATA lt_service_contracts TYPE STANDARD TABLE OF zprc_demo_srvctr WITH DEFAULT KEY.
-        DATA lt_srv_ctr_item      TYPE STANDARD TABLE OF zprc_demo_sc_itm WITH DEFAULT KEY.
+        DATA lt_service_contracts TYPE STANDARD TABLE OF zprc_demo_srvctr WITH EMPTY KEY.
+        DATA lt_srv_ctr_item      TYPE STANDARD TABLE OF zprc_demo_sc_itm WITH EMPTY KEY.
         DATA(lv_equipment_id) = 0.
 
         DO 20 TIMES.

@@ -1,0 +1,11 @@
+{
+  "BASEINFO": {
+    "FROM": [
+      "ZPRC_DEMO_BRC"
+    ],
+    "ASSOCIATED": [
+      "ZI_PRC_DEMO_BR_ERRORMODEVH",
+      "ZR_PRC_PROCESSEDOBJECTTP"
+    ]
+  }
+}

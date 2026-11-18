@@ -1,0 +1,25 @@
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'BAPI & RAP 4: Order (post-proc. w. PRC)'
+define root view entity ZR_PRC_DEMO_BR_PpPrc
+  as select from zprc_demo_brc
+  association [0..1] to ZI_PRC_DEMO_BR_ErrorModeVH as _ErrorMode       on $projection.ErrorMode = _ErrorMode.ErrorMode
+  // The PRC processes started for this order - shown with the PRC's own UI annotations
+  association [0..*] to ZR_PRC_ProcessedObjectTP   as _ProcessedObject on  $projection.OrderUUID          = _ProcessedObject.ExternalProcessedObjectUUID
+                                                                       and _ProcessedObject.ProcessName = 'DEMO_BAPI_RAP'
+{
+  key order_uuid            as OrderUUID,
+      description           as Description,
+      error_mode            as ErrorMode,
+      @Semantics.user.createdBy: true
+      local_created_by      as LocalCreatedBy,
+      @Semantics.systemDateTime.createdAt: true
+      local_created_at      as LocalCreatedAt,
+      @Semantics.user.localInstanceLastChangedBy: true
+      local_last_changed_by as LocalLastChangedBy,
+      @Semantics.systemDateTime.localInstanceLastChangedAt: true
+      local_last_changed_at as LocalLastChangedAt,
+      @Semantics.systemDateTime.lastChangedAt: true
+      last_changed_at       as LastChangedAt,
+      _ErrorMode,
+      _ProcessedObject
+}

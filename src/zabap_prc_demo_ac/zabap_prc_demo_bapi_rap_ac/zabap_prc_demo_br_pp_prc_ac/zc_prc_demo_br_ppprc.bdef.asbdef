@@ -1,0 +1,20 @@
+projection;
+strict ( 2 );
+
+// The app only offers the actions - the orders come from ZCL_PRC_DEMO_BR_INIT.
+// No create / update / delete and no draft in this service.
+define behavior for ZC_PRC_DEMO_BR_PpPrc alias DemoOrder
+{
+  use action startProcess;
+  use action resumeProcess;
+
+  // After start / resume: re-read the process info of the order and its processes.
+  // The processes themselves refresh on the PRC's event zz_objectProcessedTransition.
+  side effects
+  {
+    action startProcess  affects field ProcessState, field ProcessMessage, field ProcessCriticality,
+                                 entity _ProcessedObject, permissions ( action startProcess, action resumeProcess );
+    action resumeProcess affects field ProcessState, field ProcessMessage, field ProcessCriticality,
+                                 entity _ProcessedObject, permissions ( action startProcess, action resumeProcess );
+  }
+}

@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DOMA" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD01V>
+    <DOMNAME>ZPRC_DEMO_BR_ERROR_MODE</DOMNAME>
+    <DDLANGUAGE>E</DDLANGUAGE>
+    <DATATYPE>CHAR</DATATYPE>
+    <LENG>000002</LENG>
+    <OUTPUTLEN>000002</OUTPUTLEN>
+    <VALEXI>X</VALEXI>
+    <DDTEXT>BAPI &amp; RAP: Provoked error mode</DDTEXT>
+    <DOMMASTER>E</DOMMASTER>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+   </DD01V>
+   <DD07V_TAB>
+    <DD07V>
+     <VALPOS>0001</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>CE</DOMVALUE_L>
+     <DDTEXT>Check before save: Error message</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0002</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>SE</DOMVALUE_L>
+     <DDTEXT>Save: Error message</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0003</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>SM</DOMVALUE_L>
+     <DDTEXT>Save: MESSAGE E</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0004</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>SX</DOMVALUE_L>
+     <DDTEXT>Save: MESSAGE X</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0005</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>SC</DOMVALUE_L>
+     <DDTEXT>Save: COMMIT WORK</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0006</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>SL</DOMVALUE_L>
+     <DDTEXT>Save: Lock error</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0007</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>UA</DOMVALUE_L>
+     <DDTEXT>Update task: MESSAGE A</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0008</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>UX</DOMVALUE_L>
+     <DDTEXT>Update task: MESSAGE X</DDTEXT>
+    </DD07V>
+   </DD07V_TAB>
+   <DD01L_EXTRA>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+   </DD01L_EXTRA>
+   <I18N_LANGS>
+    <LANGU>D</LANGU>
+   </I18N_LANGS>
+   <DD01_TEXTS>
+    <item>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDTEXT>BAPI &amp; RAP: Provozierter Fehlermodus</DDTEXT>
+    </item>
+   </DD01_TEXTS>
+   <DD07_TEXTS>
+    <item>
+     <VALPOS>0001</VALPOS>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DOMVALUE_L>CE</DOMVALUE_L>
+     <DDTEXT>Prüfung vor dem Sichern: Fehlermeldung</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0002</VALPOS>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DOMVALUE_L>SE</DOMVALUE_L>
+     <DDTEXT>Sichern: Fehlermeldung</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0003</VALPOS>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DOMVALUE_L>SM</DOMVALUE_L>
+     <DDTEXT>Sichern: MESSAGE E</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0004</VALPOS>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DOMVALUE_L>SX</DOMVALUE_L>
+     <DDTEXT>Sichern: MESSAGE X</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0005</VALPOS>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DOMVALUE_L>SC</DOMVALUE_L>
+     <DDTEXT>Sichern: COMMIT WORK</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0006</VALPOS>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DOMVALUE_L>SL</DOMVALUE_L>
+     <DDTEXT>Sichern: Sperrfehler</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0007</VALPOS>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DOMVALUE_L>UA</DOMVALUE_L>
+     <DDTEXT>Verbuchung: MESSAGE A</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0008</VALPOS>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DOMVALUE_L>UX</DOMVALUE_L>
+     <DDTEXT>Verbuchung: MESSAGE X</DDTEXT>
+    </item>
+   </DD07_TEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

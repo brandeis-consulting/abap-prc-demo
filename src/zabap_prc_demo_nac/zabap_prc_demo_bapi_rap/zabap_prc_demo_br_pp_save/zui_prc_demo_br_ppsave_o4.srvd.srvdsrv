@@ -1,0 +1,4 @@
+@EndUserText.label: 'BAPI & RAP 3: Post-processing in same LUW'
+define service ZUI_PRC_DEMO_BR_PPSAVE_O4 {
+  expose ZC_PRC_DEMO_BR_PpSave as DemoOrder;
+}

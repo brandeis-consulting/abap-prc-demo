@@ -5,13 +5,19 @@
    <VSEOCLASS>
     <CLSNAME>ZCL_PRC_DEMO_CREATE_EQUI_PROC</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Order Plant Equi</DESCRIPT>
+    <DESCRIPT>ABAP-PRC Demo: Process to create an equipment</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
     <UNICODE>5</UNICODE>
     <WITH_UNIT_TESTS>X</WITH_UNIT_TESTS>
    </VSEOCLASS>
+   <DESCRIPTIONS_CLASS>
+    <SEOCLASSTX>
+     <LANGU>D</LANGU>
+     <DESCRIPT>ABAP-PRC Demo: Prozess zum Anlegen eines Equipments</DESCRIPT>
+    </SEOCLASSTX>
+   </DESCRIPTIONS_CLASS>
   </asx:values>
  </asx:abap>
 </abapGit>

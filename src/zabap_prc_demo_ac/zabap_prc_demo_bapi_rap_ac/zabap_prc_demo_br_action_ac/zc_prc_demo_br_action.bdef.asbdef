@@ -1,0 +1,9 @@
+projection;
+strict ( 2 );
+
+// The app only offers the action - the orders come from ZCL_PRC_DEMO_BR_INIT.
+// No create / update / delete and no draft in this service.
+define behavior for ZC_PRC_DEMO_BR_Action alias DemoOrder
+{
+  use action callBapi;
+}

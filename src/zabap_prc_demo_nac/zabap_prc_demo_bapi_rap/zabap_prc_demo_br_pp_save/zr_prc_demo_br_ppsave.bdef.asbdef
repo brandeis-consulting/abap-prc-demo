@@ -1,0 +1,59 @@
+managed implementation in class zbp_r_prc_demo_br_ppsave unique;
+strict ( 2 );
+with draft;
+
+// Standard ABAP on purpose: the BAPI test run belongs into a validation (final state,
+// state messages). Validations run in the early save, where the BAPI's AUTHORITY-CHECK
+// is not allowed. Only Standard ABAP can disable it there (AUTHORITY-CHECK DISABLE);
+// save:early is not supported for managed BOs. In the late save this context
+// disables it automatically.
+define authorization context NoCheckWhenSaving for disable ( save:late )
+{
+  'ZPRC_PROC';
+}
+
+// Follow-up document in the same LUW: BAPI A creates it when the order is created
+// and changes it when the order is changed - committed together with the order
+define behavior for ZR_PRC_DEMO_BR_PpSave alias DemoOrder
+persistent table zprc_demo_brs
+draft table zprc_demo_brs_d
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+with additional save
+{
+  field ( numbering : managed, readonly ) OrderUUID;
+  field ( readonly ) LocalCreatedBy, LocalCreatedAt, LocalLastChangedBy, LocalLastChangedAt, LastChangedAt;
+
+  create;
+  update;
+  delete;
+
+  // BAPI test run on the final state: state messages stay with the draft
+  validation checkWithBapi on save { create; update; }
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare { validation checkWithBapi; }
+
+  mapping for zprc_demo_brs
+    {
+      OrderUUID          = order_uuid;
+      Description        = description;
+      ErrorMode          = error_mode;
+      LocalCreatedBy     = local_created_by;
+      LocalCreatedAt     = local_created_at;
+      LocalLastChangedBy = local_last_changed_by;
+      LocalLastChangedAt = local_last_changed_at;
+      LastChangedAt      = last_changed_at;
+    }
+
+  // BO <-> BAPI structures: data and X structure in one mapping
+  mapping for zprc_demo_s_br_data control zprc_demo_s_br_datax corresponding
+    {
+      Description = description;
+      ErrorMode   = error_mode;
+    }
+}

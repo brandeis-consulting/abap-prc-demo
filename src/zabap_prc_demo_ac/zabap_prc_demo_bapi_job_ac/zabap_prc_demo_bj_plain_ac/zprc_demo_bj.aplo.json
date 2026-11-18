@@ -1,0 +1,14 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "BAPI & Jobs: Job without PRC",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "subobjects": [
+    {
+      "name": "PLAIN_JOB",
+      "description": "without ABAP-PRC"
+    }
+  ]
+}

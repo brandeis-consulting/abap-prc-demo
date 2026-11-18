@@ -1,0 +1,47 @@
+managed implementation in class zbp_r_prc_demo_br_persist unique;
+strict ( 2 );
+with draft;
+
+// Standard ABAP on purpose: the BAPI test run belongs into a validation (final state,
+// state messages). Validations run in the early save, where the BAPI's AUTHORITY-CHECK
+// is not allowed. Only Standard ABAP can disable it there (AUTHORITY-CHECK DISABLE);
+// save:early is not supported for managed BOs. In the late save this context
+// disables it automatically.
+define authorization context NoCheckWhenSaving for disable ( save:late )
+{
+  'ZPRC_PROC';
+}
+
+// The BAPI is the persistence and assigns the document number:
+// unmanaged save + late numbering
+define behavior for ZR_PRC_DEMO_BR_Persist alias LegacyOrder
+draft table zprc_demo_brp_d
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+late numbering
+with unmanaged save
+{
+  field ( readonly ) OrderID, LocalLastChangedAt, LastChangedAt;
+
+  create;
+  update;
+  // Draft requires delete - the demo BAPI has no delete, so it stays internal
+  internal delete;
+
+  // BAPI test run on the final state: state messages stay with the draft
+  validation checkWithBapi on save { create; update; }
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare { validation checkWithBapi; }
+
+  // BO <-> BAPI structures: data and X structure in one mapping
+  mapping for zprc_demo_s_br_data control zprc_demo_s_br_datax corresponding
+    {
+      Description = description;
+      ErrorMode   = error_mode;
+    }
+}

@@ -1,0 +1,40 @@
+@Metadata.layer: #CORE
+// The title identifies the instance - Fiori Elements also puts it in front of
+// every message bound to this instance in the list (verified)
+@UI.headerInfo: { typeName: 'Order', typeNamePlural: 'Orders', title: { value: 'Description' } }
+annotate entity ZC_PRC_DEMO_BR_Action with
+{
+  @UI.facet: [ { id: 'Order', purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, label: 'Order', position: 10 } ]
+  @UI.hidden: true
+  OrderUUID;
+
+  // Single-instance action: inline button per row in the list, and on the object page
+  @EndUserText.label: 'Description'
+  @UI: { lineItem:       [ { position: 10 },
+                           { type: #FOR_ACTION, dataAction: 'callBapi', label: 'Call BAPI', inline: true, position: 50 } ],
+         identification: [ { position: 10 },
+                           { type: #FOR_ACTION, dataAction: 'callBapi', label: 'Call BAPI' } ],
+         selectionField: [ { position: 10 } ] }
+  Description;
+
+  @UI: { lineItem: [ { position: 20 } ], identification: [ { position: 20 } ], selectionField: [ { position: 20 } ] }
+  ErrorMode;
+
+  @UI.hidden: true
+  ErrorModeText;
+
+  @EndUserText.label: 'BAPI Called'
+  @UI: { lineItem: [ { position: 30 } ], identification: [ { position: 30 } ] }
+  Status;
+
+  @UI.hidden: true
+  LocalCreatedBy;
+  @UI.hidden: true
+  LocalCreatedAt;
+  @UI.hidden: true
+  LocalLastChangedBy;
+  @UI.hidden: true
+  LocalLastChangedAt;
+  @UI.hidden: true
+  LastChangedAt;
+}

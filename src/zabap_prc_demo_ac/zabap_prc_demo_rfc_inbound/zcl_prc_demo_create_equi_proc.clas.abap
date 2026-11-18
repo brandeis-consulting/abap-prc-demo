@@ -56,7 +56,6 @@ CLASS zcl_prc_demo_create_equi_proc IMPLEMENTATION.
 
   METHOD zif_prc_process~get_url_for_processed_object.
     " No link: the scenario only simulates the creation, the equipments EQUI001... do not exist
-    " (formerly #ServiceContract-display - copied from the adjustment run, pointed nowhere)
     CLEAR r_relative_url.
   ENDMETHOD.
 ENDCLASS.

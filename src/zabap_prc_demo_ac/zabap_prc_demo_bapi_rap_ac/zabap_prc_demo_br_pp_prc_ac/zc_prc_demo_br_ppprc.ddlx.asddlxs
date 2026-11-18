@@ -1,0 +1,54 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeName: 'Order', typeNamePlural: 'Orders', title: { value: 'Description' } }
+annotate entity ZC_PRC_DEMO_BR_PpPrc with
+{
+  // Object page: the order, and all its PRC processes with the PRC's own annotations
+  @UI.facet: [ { id: 'Order',      purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE,
+                 label: 'Order',   position: 10 },
+               { id: 'Processing', purpose: #STANDARD, type: #LINEITEM_REFERENCE,
+                 label: 'Processing (ABAP-PRC)', position: 20, targetElement: '_ProcessedObject' } ]
+  @UI.hidden: true
+  OrderUUID;
+
+  // Single-instance actions: inline buttons per row in the list, and on the object page.
+  // Feature control enables either Start (no open process) or Resume (latest not finished).
+  @EndUserText.label: 'Description'
+  @UI: { lineItem:       [ { position: 10 },
+                           { type: #FOR_ACTION, dataAction: 'startProcess',  label: 'Start Process',  inline: true, position: 50 },
+                           { type: #FOR_ACTION, dataAction: 'resumeProcess', label: 'Resume Process', inline: true, position: 60 } ],
+         identification: [ { position: 10 },
+                           { type: #FOR_ACTION, dataAction: 'startProcess',  label: 'Start Process' },
+                           { type: #FOR_ACTION, dataAction: 'resumeProcess', label: 'Resume Process' } ],
+         selectionField: [ { position: 10 } ] }
+  Description;
+
+  @UI: { lineItem: [ { position: 20 } ], identification: [ { position: 20 } ], selectionField: [ { position: 20 } ] }
+  ErrorMode;
+
+  @UI.hidden: true
+  ErrorModeText;
+
+  @EndUserText.label: 'Process State (PRC)'
+  @UI: { lineItem:       [ { position: 30, criticality: 'ProcessCriticality', criticalityRepresentation: #WITHOUT_ICON } ],
+         identification: [ { position: 30, criticality: 'ProcessCriticality', criticalityRepresentation: #WITHOUT_ICON } ] }
+  ProcessState;
+
+  @EndUserText.label: 'Latest Message (PRC)'
+  @UI: { lineItem:       [ { position: 40, criticality: 'ProcessCriticality', criticalityRepresentation: #WITH_ICON } ],
+         identification: [ { position: 40, criticality: 'ProcessCriticality', criticalityRepresentation: #WITH_ICON } ] }
+  ProcessMessage;
+
+  @UI.hidden: true
+  ProcessCriticality;
+
+  @UI.hidden: true
+  LocalCreatedBy;
+  @UI.hidden: true
+  LocalCreatedAt;
+  @UI.hidden: true
+  LocalLastChangedBy;
+  @UI.hidden: true
+  LocalLastChangedAt;
+  @UI.hidden: true
+  LastChangedAt;
+}

@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZPRC_DEMO_CONS_CHECK</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>ABAP-PRC Demo: Consistency check</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_CONS_CHECK</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Item &amp;1: equipment &amp;2 is already in released contract &amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_CONS_CHECK</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Service contract &amp;1 released</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_CONS_CHECK</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Service contract &amp;1 not released: resolve the findings first</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_CONS_CHECK</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Consistency check of service contract &amp;1 scheduled</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_CONS_CHECK</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Service contract &amp;1 is already released</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_CONS_CHECK</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Service contract &amp;1 is consistent</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_CONS_CHECK</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Service contract &amp;1: &amp;2 finding(s) - correct them and check again</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_CONS_CHECK</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Service contract &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_CONS_CHECK</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Service contract &amp;1 not found</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPRC_DEMO_CONS_CHECK</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Consistency check run for all unreleased service contracts started</TEXT>
+    </T100>
+   </T100>
+   <I18N_LANGS>
+    <LANGU>D</LANGU>
+   </I18N_LANGS>
+   <T100T>
+    <T100T>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZPRC_DEMO_CONS_CHECK</ARBGB>
+     <STEXT>ABAP-PRC Demo: Konsistenzprüfung</STEXT>
+    </T100T>
+   </T100T>
+   <T100_TEXTS>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>001</MSGNR>
+     <TEXT>Position &amp;1: Produkt fehlt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>002</MSGNR>
+     <TEXT>Position &amp;1: Menge muss größer als null sein</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>003</MSGNR>
+     <TEXT>Position &amp;1: Rabatt von &amp;2 % übersteigt das Maximum von 50 %</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>004</MSGNR>
+     <TEXT>Position &amp;1: Equipment fehlt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>005</MSGNR>
+     <TEXT>Servicevertrag hat keine Positionen</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>006</MSGNR>
+     <TEXT>Servicevertrag &amp;1 ist konsistent</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>007</MSGNR>
+     <TEXT>Servicevertrag &amp;1: &amp;2 Befund(e) - korrigieren und fortsetzen</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>008</MSGNR>
+     <TEXT>Servicevertrag &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>009</MSGNR>
+     <TEXT>Servicevertrag &amp;1 nicht gefunden</TEXT>
+    </item>
+   </T100_TEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

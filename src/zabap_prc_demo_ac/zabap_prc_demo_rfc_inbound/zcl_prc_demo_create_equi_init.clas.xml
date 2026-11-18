@@ -5,12 +5,18 @@
    <VSEOCLASS>
     <CLSNAME>ZCL_PRC_DEMO_CREATE_EQUI_INIT</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Initialize demo data</DESCRIPT>
+    <DESCRIPT>ABAP-PRC Demo: Initialize data for Create Equipment</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
     <UNICODE>5</UNICODE>
    </VSEOCLASS>
+   <DESCRIPTIONS_CLASS>
+    <SEOCLASSTX>
+     <LANGU>D</LANGU>
+     <DESCRIPT>ABAP-PRC Demo: Daten für Equipment anlegen initialisieren</DESCRIPT>
+    </SEOCLASSTX>
+   </DESCRIPTIONS_CLASS>
   </asx:values>
  </asx:abap>
 </abapGit>

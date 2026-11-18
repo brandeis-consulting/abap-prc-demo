@@ -1,0 +1,59 @@
+managed implementation in class zbp_r_prc_demo_br_action unique;
+strict ( 2 );
+with draft;
+
+// The BAPI checks its own authorization objects. The BO's own authorization check
+// runs in the interaction phase; in the late save RAP disables the BAPI's checks
+// automatically via this context (ABAP Cloud: no explicit AUTHORITY-CHECK DISABLE).
+define authorization context NoCheckWhenSaving for disable ( save:late )
+{
+  'ZPRC_PROC';
+}
+
+define behavior for ZR_PRC_DEMO_BR_Action alias DemoOrder
+persistent table zprc_demo_bra
+draft table zprc_demo_bra_d
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+// "and cleanup": the saver may redefine CLEANUP to clear its own buffer
+with additional save and cleanup
+{
+  field ( numbering : managed, readonly ) OrderUUID;
+  field ( readonly ) Status, LocalCreatedBy, LocalCreatedAt, LocalLastChangedBy, LocalLastChangedAt, LastChangedAt;
+
+  create;
+  update;
+  delete;
+
+  // precheck: BAPI test run before the action is executed (interaction phase,
+  // AUTHORITY-CHECK allowed). The action only remembers the posting run;
+  // the BAPI posts in the late save.
+  action ( features : instance, precheck ) callBapi result [1] $self;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for zprc_demo_bra
+    {
+      OrderUUID          = order_uuid;
+      Description        = description;
+      ErrorMode          = error_mode;
+      Status             = status;
+      LocalCreatedBy     = local_created_by;
+      LocalCreatedAt     = local_created_at;
+      LocalLastChangedBy = local_last_changed_by;
+      LocalLastChangedAt = local_last_changed_at;
+      LastChangedAt      = last_changed_at;
+    }
+
+  // BO <-> BAPI structures: data and X structure in one mapping
+  mapping for zprc_demo_s_br_data control zprc_demo_s_br_datax corresponding
+    {
+      Description = description;
+      ErrorMode   = error_mode;
+    }
+}

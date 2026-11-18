@@ -7,7 +7,7 @@
     <DDLANGUAGE>E</DDLANGUAGE>
     <TABCLASS>TRANSP</TABCLASS>
     <CLIDEP>X</CLIDEP>
-    <DDTEXT>Database Table for BuPa</DDTEXT>
+    <DDTEXT>ABAP-PRC Demo: Business partners</DDTEXT>
     <MASTERLANG>E</MASTERLANG>
     <CONTFLAG>A</CONTFLAG>
     <EXCLASS>1</EXCLASS>
@@ -53,6 +53,15 @@
      <MASK>  CHAR</MASK>
     </DD03P>
    </DD03P_TABLE>
+   <I18N_LANGS>
+    <LANGU>D</LANGU>
+   </I18N_LANGS>
+   <DD02_TEXTS>
+    <item>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDTEXT>ABAP-PRC Demo: Geschäftspartner</DDTEXT>
+    </item>
+   </DD02_TEXTS>
    <TABL_EXTRAS>
     <TDDAT>
      <TABNAME>ZPRC_DEMO_BUPA</TABNAME>

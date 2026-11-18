@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DOMA" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD01V>
+    <DOMNAME>ZPRC_DEMO_BJ_ERROR_MODE</DOMNAME>
+    <DDLANGUAGE>E</DDLANGUAGE>
+    <DATATYPE>CHAR</DATATYPE>
+    <LENG>000002</LENG>
+    <OUTPUTLEN>000002</OUTPUTLEN>
+    <VALEXI>X</VALEXI>
+    <DDTEXT>BAPI &amp; Jobs: Provoked error</DDTEXT>
+    <DOMMASTER>E</DOMMASTER>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+   </DD01V>
+   <DD07V_TAB>
+    <DD07V>
+     <VALPOS>0001</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>AE</DOMVALUE_L>
+     <DDTEXT>BAPI A: Error message</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0002</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>AM</DOMVALUE_L>
+     <DDTEXT>BAPI A: MESSAGE E</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0003</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>AX</DOMVALUE_L>
+     <DDTEXT>BAPI A: MESSAGE X</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0004</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>AC</DOMVALUE_L>
+     <DDTEXT>BAPI A: COMMIT WORK</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0005</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>AL</DOMVALUE_L>
+     <DDTEXT>BAPI A: Lock error</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0006</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>AU</DOMVALUE_L>
+     <DDTEXT>BAPI A: Update task MESSAGE A</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0007</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>AV</DOMVALUE_L>
+     <DDTEXT>BAPI A: Update task MESSAGE X</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0008</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>BE</DOMVALUE_L>
+     <DDTEXT>BAPI B: Error message</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0009</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>BM</DOMVALUE_L>
+     <DDTEXT>BAPI B: MESSAGE E</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0010</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>BX</DOMVALUE_L>
+     <DDTEXT>BAPI B: MESSAGE X</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0011</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>BC</DOMVALUE_L>
+     <DDTEXT>BAPI B: COMMIT WORK</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0012</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>BL</DOMVALUE_L>
+     <DDTEXT>BAPI B: Lock error</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0013</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>BU</DOMVALUE_L>
+     <DDTEXT>BAPI B: Update task MESSAGE A</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0014</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>BV</DOMVALUE_L>
+     <DDTEXT>BAPI B: Update task MESSAGE X</DDTEXT>
+    </DD07V>
+   </DD07V_TAB>
+   <DD01L_EXTRA>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+   </DD01L_EXTRA>
+   <I18N_LANGS>
+    <LANGU>D</LANGU>
+   </I18N_LANGS>
+   <DD01_TEXTS>
+    <item>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDTEXT>BAPI &amp; Jobs: Provozierter Fehler</DDTEXT>
+    </item>
+   </DD01_TEXTS>
+   <DD07_TEXTS>
+    <item>
+     <VALPOS>0001</VALPOS>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DOMVALUE_L>AE</DOMVALUE_L>
+     <DDTEXT>BAPI A: Fehlermeldung</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0002</VALPOS>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DOMVALUE_L>AM</DOMVALUE_L>
+     <DDTEXT>BAPI A: MESSAGE E</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0003</VALPOS>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DOMVALUE_L>AX</DOMVALUE_L>
+     <DDTEXT>BAPI A: MESSAGE X</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0004</VALPOS>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DOMVALUE_L>AC</DOMVALUE_L>
+     <DDTEXT>BAPI A: COMMIT WORK</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0005</VALPOS>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DOMVALUE_L>AL</DOMVALUE_L>
+     <DDTEXT>BAPI A: Sperrfehler</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0006</VALPOS>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DOMVALUE_L>AU</DOMVALUE_L>
+     <DDTEXT>BAPI A: Verbuchung MESSAGE A</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0007</VALPOS>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DOMVALUE_L>AV</DOMVALUE_L>
+     <DDTEXT>BAPI A: Verbuchung MESSAGE X</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0008</VALPOS>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DOMVALUE_L>BE</DOMVALUE_L>
+     <DDTEXT>BAPI B: Fehlermeldung</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0009</VALPOS>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DOMVALUE_L>BM</DOMVALUE_L>
+     <DDTEXT>BAPI B: MESSAGE E</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0010</VALPOS>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DOMVALUE_L>BX</DOMVALUE_L>
+     <DDTEXT>BAPI B: MESSAGE X</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0011</VALPOS>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DOMVALUE_L>BC</DOMVALUE_L>
+     <DDTEXT>BAPI B: COMMIT WORK</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0012</VALPOS>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DOMVALUE_L>BL</DOMVALUE_L>
+     <DDTEXT>BAPI B: Sperrfehler</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0013</VALPOS>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DOMVALUE_L>BU</DOMVALUE_L>
+     <DDTEXT>BAPI B: Verbuchung MESSAGE A</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0014</VALPOS>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DOMVALUE_L>BV</DOMVALUE_L>
+     <DDTEXT>BAPI B: Verbuchung MESSAGE X</DDTEXT>
+    </item>
+   </DD07_TEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

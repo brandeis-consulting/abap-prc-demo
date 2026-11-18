@@ -1,0 +1,4 @@
+@EndUserText.label: 'BAPI & RAP 1: Action calls BAPI'
+define service ZUI_PRC_DEMO_BR_ACTION_O4 {
+  expose ZC_PRC_DEMO_BR_Action as DemoOrder;
+}

@@ -10,7 +10,14 @@ CLASS zcl_prc_demo_adjust_run_job DEFINITION
   PUBLIC SECTION.
     METHODS if_apj_dt_exec_object~get_parameters REDEFINITION.
 
-    CONSTANTS: BEGIN OF c_parameter,
+    "! Application of the runs (Runs app, authorization ZPRC_RUN-ZPRCRUNAPP)
+    CONSTANTS co_application_name  TYPE zprc_run_app_name                 VALUE 'DEMO_RATE_ADJUSTMENT'.
+    "! Job template that schedules this job
+    CONSTANTS co_job_template_name TYPE zif_prc_run=>ty_job_template_name VALUE 'ZAJT_PRC_DEMO_ADJUST_RUN'.
+
+    " Selection names of the job parameters. The values are stored in job templates
+    " and scheduled jobs - do not change them.
+    CONSTANTS: BEGIN OF co_parameter,
                  contract_id        TYPE zif_prc_run=>ty_run_parameter VALUE 'S_CTR',
                  sold_to_party      TYPE zif_prc_run=>ty_run_parameter VALUE 'S_SOLD',
                  ship_to_party      TYPE zif_prc_run=>ty_run_parameter VALUE 'S_SHIP',
@@ -20,10 +27,7 @@ CLASS zcl_prc_demo_adjust_run_job DEFINITION
                  equipment_category TYPE zif_prc_run=>ty_run_parameter VALUE 'P_EQCAT',
                  material           TYPE zif_prc_run=>ty_run_parameter VALUE 'P_MAT',
                  discount_percent   TYPE zif_prc_run=>ty_run_parameter VALUE 'P_DISC',
-               END OF c_parameter.
-
-    CONSTANTS: co_job_template_names TYPE zif_prc_run=>ty_job_template_name VALUE 'ZAJT_PRC_DEMO_ADJUST_RUN'.
-    CONSTANTS: co_application_names  TYPE zprc_run_app_name VALUE 'DEMO_RATE_ADJUSTMENT'.
+               END OF co_parameter.
 
   PROTECTED SECTION.
     METHODS get_application_name REDEFINITION.
@@ -39,30 +43,54 @@ CLASS zcl_prc_demo_adjust_run_job IMPLEMENTATION.
   METHOD if_apj_dt_exec_object~get_parameters.
     et_parameter_def = VALUE #(
         changeable_ind = abap_true
-        ( selname = c_parameter-contract_id         kind = if_apj_dt_exec_object=>select_option datatype = 'C' length = 10 param_text = 'Service Contract' )
-        ( selname = c_parameter-sold_to_party       kind = if_apj_dt_exec_object=>select_option datatype = 'C' length = 10 param_text = 'Sold-to-Party' )
-        ( selname        = c_parameter-ship_to_party
+        ( selname    = co_parameter-contract_id
+          kind       = if_apj_dt_exec_object=>select_option
+          datatype   = 'C'
+          length     = 10
+          param_text = 'Service Contract' )
+        ( selname    = co_parameter-sold_to_party
+          kind       = if_apj_dt_exec_object=>select_option
+          datatype   = 'C'
+          length     = 10
+          param_text = 'Sold-to-Party' )
+        ( selname    = co_parameter-ship_to_party
+          kind       = if_apj_dt_exec_object=>select_option
+          datatype   = 'C'
+          length     = 10
+          param_text = 'Ship-to-Party' )
+        ( selname        = co_parameter-lifecycle_status
           kind           = if_apj_dt_exec_object=>select_option
           component_type = 'ZPRC_DEMO_LIFECYCLE_STATUS'
           datatype       = 'C'
-          length         = 10
-          param_text     = 'Ship-to-Party' )
-        ( selname        = c_parameter-lifecycle_status
+          length         = 1
+          param_text     = 'Lifecycle Status' )
+        ( selname        = co_parameter-error_status
           kind           = if_apj_dt_exec_object=>select_option
           component_type = 'ZPRC_DEMO_ERROR_STATUS'
           datatype       = 'C'
           length         = 1
-          param_text     = 'Lifecycle Status' )
-        ( selname = c_parameter-error_status        kind = if_apj_dt_exec_object=>select_option datatype = 'C' length = 1  param_text = 'Error Status' )
+          param_text     = 'Error Status' )
 
-        ( selname        = c_parameter-equipment_category
-          kind           = if_apj_dt_exec_object=>parameter
-          datatype       = 'C'
-          length         = 10
-          param_text     = 'Equipment Category' )
-        ( selname = c_parameter-material            kind = if_apj_dt_exec_object=>parameter datatype = 'C'   length = 10 param_text = 'Service' )
-        ( selname = c_parameter-discount_percent    kind = if_apj_dt_exec_object=>parameter datatype = 'P'   length = 10 param_text = 'Discount (in %)' )
-        ( selname = zif_prc_run=>co_parameter-p_uuid kind = if_apj_dt_exec_object=>parameter datatype = 'C'   length = 32 param_text = 'Run UUID' ) ).
+        ( selname    = co_parameter-equipment_category
+          kind       = if_apj_dt_exec_object=>parameter
+          datatype   = 'C'
+          length     = 10
+          param_text = 'Equipment Category' )
+        ( selname    = co_parameter-material
+          kind       = if_apj_dt_exec_object=>parameter
+          datatype   = 'C'
+          length     = 10
+          param_text = 'Service' )
+        ( selname    = co_parameter-discount_percent
+          kind       = if_apj_dt_exec_object=>parameter
+          datatype   = 'P'
+          length     = 10
+          param_text = 'Discount (in %)' )
+        ( selname    = zif_prc_run=>co_parameter-p_uuid
+          kind       = if_apj_dt_exec_object=>parameter
+          datatype   = 'C'
+          length     = 32
+          param_text = 'Run UUID' ) ).
   ENDMETHOD.
 
 
@@ -74,11 +102,21 @@ CLASS zcl_prc_demo_adjust_run_job IMPLEMENTATION.
     DATA lifecycle_states TYPE RANGE OF ZI_PRC_Demo_SrvCtrItemSel-LifecycleStatus.
     DATA error_states     TYPE RANGE OF ZI_PRC_Demo_SrvCtrItemSel-ErrorStatus.
 
-    get_range( EXPORTING i_select_options = i_select_options i_name = c_parameter-contract_id      IMPORTING e_range = contracts ).
-    get_range( EXPORTING i_select_options = i_select_options i_name = c_parameter-sold_to_party    IMPORTING e_range = sold_to_parties ).
-    get_range( EXPORTING i_select_options = i_select_options i_name = c_parameter-ship_to_party    IMPORTING e_range = ship_to_parties ).
-    get_range( EXPORTING i_select_options = i_select_options i_name = c_parameter-lifecycle_status IMPORTING e_range = lifecycle_states ).
-    get_range( EXPORTING i_select_options = i_select_options i_name = c_parameter-error_status     IMPORTING e_range = error_states ).
+    get_range( EXPORTING i_select_options = i_select_options
+                         i_name           = co_parameter-contract_id
+               IMPORTING e_range          = contracts ).
+    get_range( EXPORTING i_select_options = i_select_options
+                         i_name           = co_parameter-sold_to_party
+               IMPORTING e_range          = sold_to_parties ).
+    get_range( EXPORTING i_select_options = i_select_options
+                         i_name           = co_parameter-ship_to_party
+               IMPORTING e_range          = ship_to_parties ).
+    get_range( EXPORTING i_select_options = i_select_options
+                         i_name           = co_parameter-lifecycle_status
+               IMPORTING e_range          = lifecycle_states ).
+    get_range( EXPORTING i_select_options = i_select_options
+                         i_name           = co_parameter-error_status
+               IMPORTING e_range          = error_states ).
 
     SELECT DISTINCT ServiceContractID, ContractUUID
       FROM ZI_PRC_Demo_SrvCtrItemSel
@@ -101,7 +139,7 @@ CLASS zcl_prc_demo_adjust_run_job IMPLEMENTATION.
 
 
   METHOD get_application_name.
-    rv_application_name = zif_prc_run=>co_application_names-demo_rate_adjustment.
+    r_application_name = co_application_name.
   ENDMETHOD.
 
 ENDCLASS.

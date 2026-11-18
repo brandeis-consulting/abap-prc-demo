@@ -5,12 +5,18 @@
    <VSEOCLASS>
     <CLSNAME>ZCL_PRC_DEMO_EQUI_ASSIGN_PROC</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Order Plant Equi</DESCRIPT>
+    <DESCRIPT>ABAP-PRC Demo: Process to assign an equipment to a contract</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
     <UNICODE>5</UNICODE>
    </VSEOCLASS>
+   <DESCRIPTIONS_CLASS>
+    <SEOCLASSTX>
+     <LANGU>D</LANGU>
+     <DESCRIPT>ABAP-PRC Demo: Prozess Equipment-Zuordnung zum Vertrag</DESCRIPT>
+    </SEOCLASSTX>
+   </DESCRIPTIONS_CLASS>
   </asx:values>
  </asx:abap>
 </abapGit>
