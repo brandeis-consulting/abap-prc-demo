@@ -162,18 +162,18 @@ CLASS lhc_ServiceContract IMPLEMENTATION.
     DATA(job_name) = |Service Contract Adjustment Run - { cl_abap_context_info=>get_system_date( ) }, |
                   && |{ cl_abap_context_info=>get_system_time( ) } - { cl_abap_context_info=>get_user_technical_name( ) }|.
 
-    " Simulation is a property of the run: the job and its processed objects read it there
+    " Simulation is a parameter of the job like the others: the job decides (IS_SIMULATION)
     DATA(run_uuid) = zcl_prc_run_initiator=>get_instance( )->schedule_run(
       EXPORTING
         i_selection_json    = keys[ 1 ]-%param-selectoptions
         i_parameters        = VALUE #(
             ( name = zcl_prc_demo_adjust_run_job=>co_parameter-equipment_category value = keys[ 1 ]-%param-EquipmentCategory )
             ( name = zcl_prc_demo_adjust_run_job=>co_parameter-discount_percent   value = keys[ 1 ]-%param-DiscountInPercent )
-            ( name = zcl_prc_demo_adjust_run_job=>co_parameter-material           value = keys[ 1 ]-%param-Material ) )
+            ( name = zcl_prc_demo_adjust_run_job=>co_parameter-material           value = keys[ 1 ]-%param-Material )
+            ( name = zcl_prc_demo_adjust_run_job=>co_parameter-simulation         value = keys[ 1 ]-%param-Simulation ) )
         i_application_name  = zcl_prc_demo_adjust_run_job=>co_application_name
         i_job_name          = job_name
         i_job_template_name = zcl_prc_demo_adjust_run_job=>co_job_template_name
-        i_simulation        = keys[ 1 ]-%param-Simulation
       IMPORTING
         e_messages          = messages ).
 

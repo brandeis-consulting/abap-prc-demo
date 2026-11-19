@@ -2,6 +2,9 @@
 "!
 "! Run pattern: selects the service contracts to adjust; the run, creating the
 "! processed objects and processing them is done by ZCL_PRC_RUN_JOB.
+"!
+"! The parameter P_SIM makes the run a simulation (IS_SIMULATION): set when the
+"! job is scheduled directly, or passed by the service contract app.
 CLASS zcl_prc_demo_adjust_run_job DEFINITION
   PUBLIC
   INHERITING FROM zcl_prc_run_job FINAL
@@ -27,12 +30,14 @@ CLASS zcl_prc_demo_adjust_run_job DEFINITION
                  equipment_category TYPE zif_prc_run=>ty_run_parameter VALUE 'P_EQCAT',
                  material           TYPE zif_prc_run=>ty_run_parameter VALUE 'P_MAT',
                  discount_percent   TYPE zif_prc_run=>ty_run_parameter VALUE 'P_DISC',
+                 simulation         TYPE zif_prc_run=>ty_run_parameter VALUE 'P_SIM',
                END OF co_parameter.
 
   PROTECTED SECTION.
     METHODS get_application_name REDEFINITION.
     METHODS get_process          REDEFINITION.
     METHODS select               REDEFINITION.
+    METHODS is_simulation        REDEFINITION.
 
   PRIVATE SECTION.
 ENDCLASS.
@@ -86,6 +91,12 @@ CLASS zcl_prc_demo_adjust_run_job IMPLEMENTATION.
           datatype   = 'P'
           length     = 10
           param_text = 'Discount (in %)' )
+        ( selname      = co_parameter-simulation
+          kind         = if_apj_dt_exec_object=>parameter
+          datatype     = 'C'
+          length       = 1
+          checkbox_ind = abap_true
+          param_text   = 'Simulation' )
         ( selname    = zif_prc_run=>co_parameter-p_uuid
           kind       = if_apj_dt_exec_object=>parameter
           datatype   = 'C'
@@ -129,6 +140,12 @@ CLASS zcl_prc_demo_adjust_run_job IMPLEMENTATION.
 
     r_objects = VALUE #( FOR s IN selected ( id   = s-ServiceContractID
                                              uuid = s-ContractUUID ) ).
+  ENDMETHOD.
+
+
+  METHOD is_simulation.
+    DATA(simulation) = VALUE #( i_parameter_values[ name = co_parameter-simulation ] OPTIONAL ).
+    r_simulation = xsdbool( simulation-value = abap_true ).
   ENDMETHOD.
 
 
